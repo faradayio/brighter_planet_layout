@@ -4,6 +4,7 @@ module BrighterPlanetLayout
     initializer 'brighter_planet_layout.add_paths' do |app|
       app.paths.app.views << File.expand_path(File.join(File.dirname(__FILE__), '..', '..', 'app', 'views'))
       ApplicationController.helper BrighterPlanetHelper
+      ApplicationController.layout 'brighter_planet'
     end
   end
 end
