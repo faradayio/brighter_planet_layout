@@ -1,0 +1,22 @@
+<div id="header">
+  <h1><%= image_tag 'logo.png' :alt => "Brighter Planet" %></h1>
+  <ul>
+    <li><%= link_to 'Home', 'http://brighterplanet.com' %></li>
+    <li><%= link_to 'About us', 'http://brighterplanet.com/about' %></li>
+    <li><%= link_to 'Dev hub', 'http://brighterplanet.com' %></li>
+  </ul>
+</div>
+
+<div id="title">
+<%= render :partial => 'layouts/title' %> 
+</div>
+
+<div id="flash">
+<% if error = flash[:error] %>
+<p class="flash error"><%= error %></p>
+<% elsif notice = flash[:notice] %>
+<p class="flash notice"><%= notice %></p>
+<% end %>
+</div>
+
+

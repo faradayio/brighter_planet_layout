@@ -1,1 +1,631 @@
-* { color: red; }
+/*------------*/
+
+@font-face {
+  font-family: 'Brighter Planet';
+  src: url('fonts/KievitWebPro.eot');
+  src: local('☺'), url("/stylesheets/fonts/KievitWebPro.woff") format("woff"), url("fonts/KievitOT-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Brighter Planet';
+  src: url('fonts/KievitWebPro-Bold.eot');
+  src: local('☺'), url("fonts/KievitWebPro-Bold.woff") format("woff"), url("fonts/KievitOT-Bold.otf") format("opentype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Brighter Planet';
+  src: url('fonts/KievitWebPro-BoldIta.eot');
+  src: local('☺'), url("fonts/KievitWebPro-BoldIta.woff") format("woff"), url("fonts/KievitOT-BoldItalic.otf") format("opentype");
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Brighter Planet';
+  src: url('fonts/KievitWebPro-Ita.eot');
+  src: local('☺'), url("fonts/KievitWebPro-Ita.woff") format("woff"), url("fonts/KievitOT-Italic.otf") format("opentype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+/* ---------- */
+
+body {
+  margin: 0;
+  font-size: 13px;
+  background: #222 url(images/bg.png) repeat-y;
+}
+
+body, input, select {
+  font-family: "Brighter Planet", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, p, ol, ul, li, dl, dt, dd {
+  margin: 0;
+  padding: 0;
+}
+
+#header {
+  background-image:
+    -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      color-stop(0, rgb(100,100,100)),
+      color-stop(0.16, rgb(77,77,77)),
+      color-stop(0.75, rgb(48,48,48)),
+      color-stop(1, rgb(28,28,28))
+    );
+  background-image:
+    -moz-linear-gradient(
+      center top,
+      rgb(100,100,100) 0%,
+      rgb(77,77,77) 16%,
+      rgb(48,48,48) 75%,
+      rgb(28,28,28) 100%
+    );
+  overflow: auto;
+}
+
+#header h1 {
+  height: 34px;
+  float: left;
+  width: 129px;
+  margin: 13px;
+}
+
+#header ul {
+  list-style: none;
+  overflow: auto;
+  margin: 0 0 0 165px;
+}
+
+#header ul li {
+  border-left: 1px solid black;
+  float: left;
+  width: 120px;
+}
+
+#header ul li a {
+  border-left: 1px solid #555;
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: silver;
+  font-size: 13px;
+  line-height: 1;
+  text-shadow: -1px -1px 0px black;
+  padding: 23.5px 0;
+}
+
+#header li:last-child {
+  border-right: 1px solid #555;
+}
+
+#header li:last-child a {
+  border-right: 1px solid black;
+}
+
+#header ul li a:hover {
+  background: rgba(0,0,0,0.1);
+}
+
+#title {
+  background-color: #5FBBFF;
+  background-repeat: no-repeat;
+  background-position: 20px 20%;
+  padding: 20px 0 0 165px;
+  height: 70px;
+  border-bottom: 1px solid #0070C4;
+  -moz-box-shadow: inset 0 10px 10px rgba(0,0,0,0.1);
+  -webkit-box-shadow: inset 0 10px 10px rgba(0,0,0,0.1);
+  box-shadow: inset 0 10px 10px rgba(0,0,0,0.1);
+}
+
+#title h1, #title h2 {
+  font-size: 18px;
+  text-shadow: 1px 1px 0px rgba(255,255,255,0.5);
+}
+
+#title h2 {
+  color: #333;
+}
+
+#content, #flash {
+  background: #f1f1f1;
+}
+
+#flash {
+  padding: 0 0 15px;
+}
+
+#content {
+  padding: 15px 15px 50px;
+}
+
+#content>p {
+  margin: 0 15px 10px 150px;
+  max-width: 600px;
+}
+
+#content h1 {
+  font-size: 18px;
+  margin: 0 10px 20px 150px;
+  text-shadow: 1px 1px 0 white;
+  color: #333;
+}
+
+#content h2 {
+  font-size: 18px;
+  margin: 25px 10px 20px 150px;
+  text-shadow: 1px 1px 0 white;
+  color: gray;
+}
+
+#content form dl dt {
+  float: left;
+  width: 140px;
+  text-align: right;
+  margin: 0 10px 0 0;
+  padding: 10px 0 0;
+}
+
+#content form dl dt .field_with_errors label, #content form dl dt.label .field_with_errors {
+  color: #F16262;
+}
+
+#content form dl dt label, #content form dl dt.label {
+  color: #444;
+  text-shadow: 1px 1px 0 white;
+}
+
+#content form dl dd {
+  margin: 0 15px 10px 150px;
+  position: relative;
+}
+
+#content form dl dd input[type=text], #content form dl dd input[type=password] {
+  font-size: 21px;
+  padding: 4px;
+  width: 100%;
+  max-width: 600px;
+}
+
+#content form dl dd select {
+  font-size: 21px;
+}
+
+#content form p.action {
+  margin: 20px 0 0 150px;
+}
+
+#content form p.action input[type=submit] {
+  background-image:
+    -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      color-stop(0, rgb(100,100,100)),
+      color-stop(0.16, rgb(77,77,77)),
+      color-stop(0.75, rgb(48,48,48)),
+      color-stop(1, rgb(28,28,28))
+    );
+  background-image:
+    -moz-linear-gradient(
+      center top,
+      rgb(100,100,100) 0%,
+      rgb(77,77,77) 16%,
+      rgb(48,48,48) 75%,
+      rgb(28,28,28) 100%
+    );
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border: none;
+  border-radius: 3px;
+  padding: 5px;
+  color: #ddd;
+  text-decoration: none;
+  text-shadow: -1px -1px 0 black;
+  text-align: center;
+  font-size: 18px;
+}
+
+p.new, div.destroy {
+  margin: 15px 15px 0 150px;
+}
+
+p.new a {
+  color: blue;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 0 white;
+}
+
+p.new a:before {
+  content: "✚";
+  font-size: 30px;
+  margin: 0 5px 0 0;
+  vertical-align: -3px;
+}
+
+p.new a:hover:before {
+  color: #333;
+}
+
+div.destroy input[type=submit] {
+  background-image:
+    -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        color-stop(0, rgb(255,66,66)),
+        color-stop(0.15, rgb(245,19,19)),
+        color-stop(0.75, rgb(204,10,10)),
+        color-stop(1, rgb(143,6,6))
+    );
+  background-image:
+    -moz-linear-gradient(
+        center top,
+        rgb(255,66,66) 0%,
+        rgb(245,19,19) 15%,
+        rgb(204,10,10) 75%,
+        rgb(143,6,6) 100%
+    );
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border: none;
+  border-radius: 3px;
+  padding: 5px;
+  color: #ddd;
+  text-decoration: none;
+  text-shadow: -1px -1px 0 black;
+  text-align: center;
+}
+
+#content>p.back {
+  margin: 10px 15px 10px 150px;
+  border-top: 1px solid silver;
+  padding: 10px 0 0;
+}
+
+p.back:before {
+  content: "← "
+}
+
+p.back a {
+  color: blue;
+}
+
+p.flash {
+  margin: 0 15px 0 165px;
+  padding: 10px;
+  position: relative;
+  color: white;
+  font-size: 15px;
+}
+
+p.flash.error {
+  background: #F16262;
+  border-left: 1px solid #C11A1A;
+  border-bottom: 1px solid #C11A1A;
+  border-right: 1px solid #C11A1A;
+  text-shadow: -1px -1px 0 #C11A1A;
+}
+
+p.flash.notice {
+  background: silver;
+  border-left: 1px solid gray;
+  border-bottom: 1px solid gray;
+  border-right: 1px solid gray;
+  text-shadow: -1px -1px 0 gray;
+}
+
+p.flash:before {
+  position: absolute;
+  left: -35px;
+  top: -7px;
+  line-height: 45px;
+  font-size: 40px;
+  text-shadow: 1px 1px 0 silver;
+}
+
+p.flash.error:before {
+  content: "⚠";
+  color: #F16262;
+}
+
+#footer #shortcuts {
+  background-image:
+    -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      color-stop(0, rgb(77,77,77)),
+      color-stop(1, rgb(48,48,48))
+    );
+  background-image:
+    -moz-linear-gradient(
+      center top,
+      rgb(77,77,77) 0%,
+      rgb(48,48,48) 100%
+    );
+  overflow: auto;
+  font-size: 11px;
+}
+
+#footer #shortcuts h3 {
+  float: left;
+  width: 150px;
+  text-align: right;
+  color: silver;
+  text-shadow: -1px -1px 0px black;
+  padding: 1px 0 0;
+  font-size: 12px;
+}
+
+#footer #shortcuts h3:after {
+  content: " →";
+}
+
+#footer #shortcuts ul {
+  list-style: none;
+  overflow: auto;
+  margin: 0 0 0 165px;
+}
+
+#footer #shortcuts ul li {
+  border-left: 1px solid black;
+  float: left;
+  width: 80px;
+}
+
+#footer #shortcuts ul li a {
+  border-left: 1px solid #555;
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: silver;
+  line-height: 1;
+  text-shadow: -1px -1px 0px black;
+  padding: 5px 0;
+}
+
+#footer #shortcuts li:last-child {
+  border-right: 1px solid #555;
+}
+
+#footer #shortcuts li:last-child a {
+  border-right: 1px solid black;
+}
+
+#footer #shortcuts ul li a:hover {
+  background: rgba(0,0,0,0.1);
+}
+
+#footer #map {
+  -moz-box-shadow: inset 0 10px 10px rgba(0,0,0,0.1);
+  -webkit-box-shadow: inset 0 10px 10px rgba(0,0,0,0.1);
+  box-shadow: inset 0 10px 10px rgba(0,0,0,0.1);
+  text-shadow: 1px 1px 0 black;
+  overflow: auto;
+  padding: 0 0 45px 0;
+}
+
+#footer #map #slogan {
+  margin: 25px 10px 0 10px;
+  width: 150px;
+  float: left;
+}
+
+#footer #map #slogan h1 {
+  font-size: 16px;
+  color: #2DB56A;
+  font-weight: normal;
+}
+
+#footer #map #slogan p.slogan {
+  color: silver;
+}
+
+#footer #map #slogan p.description {
+  font-size: 11px;
+  color: gray;
+  margin: 5px 0 0;
+}
+
+#footer #map #slogan p.description a {
+  color: silver;
+}
+
+#footer #map #middleware {
+  float: left;
+  width: 320px;
+  margin: 25px 80px 0 0;
+  font-size: 11px;
+}
+
+#footer #map #middleware h3 {
+  color: silver;
+  text-transform: uppercase;
+  font-weight: normal;
+  font-size: 11px;
+}
+
+#footer #map #middleware p {
+  color: gray;
+}
+
+#footer #map #middleware ul.links {
+  list-style: none;
+  border-top: 1px solid #222;
+  padding: 10px 0 0;
+}
+
+#footer #map #middleware ul.links li {
+  margin: 0 0 7px;
+}
+
+#footer #map #middleware ul.links li:before {
+  content: "▶";
+  display: block;
+  float: left;
+  width: 1em;
+  background: #555;
+  color: #222;
+  padding: 0 0 1px 2px;
+  line-height: 14px;
+  margin: 0 5px 0 0;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  text-shadow: none;
+  font-size: 13px;
+  -moz-box-shadow: black 1px 1px 0;
+}
+
+#footer #map #middleware ul.links li a {
+  color: gray;
+}
+
+#footer #map #middleware ul.industries {
+  list-style: none;
+  margin: 25px 0 0;
+  color: gray;
+  border-left: 1px solid black;
+  border-top: 1px solid black;
+  border-bottom: 1px solid #222;
+  border-right: 1px solid #222;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+
+#footer #map #middleware ul.industries li {
+  background: #050505;
+  border-top: 1px solid black;
+  border-bottom: 1px solid #222;
+}
+
+#footer #map #middleware ul.industries li:first-child {
+  border-top: none;
+  -moz-border-radius: 5px 5px 0 0;
+  -webkit-border-radius: 5px 5px 0 0;
+  border-radius: 5px 5px 0 0;
+}
+
+#footer #map #middleware ul.industries li:last-child {
+  border-bottom: none;
+  -moz-border-radius: 0 0 5px 5px;
+  -webkit-border-radius: 0 0 5px 5px;
+  border-radius: 0 0 5px 5px;
+}
+
+#footer #map #middleware ul.industries li a {
+  padding: 7px 7px 7px 32px;
+  background-repeat: no-repeat;
+  background-position: 5px 50%;
+  display: block;
+  text-decoration: none;
+  color: gray;
+}
+
+#footer #map #middleware ul.industries a:hover {
+  background-color: black;
+}
+
+#footer #map #middleware ul.industries li a strong {
+  color: silver;
+  text-transform: uppercase;
+  font-weight: normal;
+  text-decoration: underline;
+  padding: 0 2px 0 0;
+}
+
+#footer #map #middleware ul.industries li.prism a {
+  background-image: url(images/prism.png);
+}
+
+#footer #map #middleware .main {
+  padding: 0 0 10px 80px;
+  background: url(images/gears.png) no-repeat;
+  min-height: 52px;
+  border-bottom: 1px solid black;
+}
+  
+
+#footer #map #consumer {
+  float: left;
+  width: 320px;
+  background: url(images/cards.png) no-repeat;
+  min-height: 200px;
+}
+
+#footer #map #consumer #cards {
+  margin: 28px 0 0;
+  padding: 0 0 30px 160px;
+  font-size: 11px;
+  border-bottom: 1px solid black;
+}
+
+#footer #map #consumer h4 {
+  color: silver;
+  font-weight: normal;
+  text-transform: uppercase;
+  margin: 0 0 5px 0;
+}
+
+#footer #map #consumer h4 a {
+  color: silver;
+  text-decoration: none;
+}
+
+#footer #map #consumer p {
+  color: gray;
+}
+
+#footer #map #consumer #profiler {
+  border-top: 1px solid #333;
+  padding: 0 90px 15px 0;
+  font-size: 11px;
+  background: url(images/emitters.png) no-repeat 100% 10px;
+  min-height: 61px;
+  border-bottom: 1px solid black;
+}
+
+#footer #map #consumer #profiler h4 {
+  padding: 15px 0 0;
+}
+
+#footer #map #consumer>p {
+  border-top: 1px solid #333;
+  padding: 10px 0 0;
+  font-size: 11px;
+}
+
+#footer #map #consumer a {
+  color: gray;
+}
+
+#footer #map #consumer>p:before {
+  content: "▶";
+  display: block;
+  float: left;
+  width: 1em;
+  background: #555;
+  color: #222;
+  padding: 0 0 1px 2px;
+  line-height: 14px;
+  margin: 0 5px 0 0;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  text-shadow: none;
+  font-size: 13px;
+  -moz-box-shadow: black 1px 1px 0;
+}
