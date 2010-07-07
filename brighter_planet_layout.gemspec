@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{brighter_planet_layout}
-  s.version = "0.1.0"
+  s.version = "0.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Andy Rossmeissl"]
@@ -23,9 +23,14 @@ Gem::Specification.new do |s|
      "README.rdoc",
      "Rakefile",
      "VERSION",
+     "app/helpers/brighter_planet_helper.rb",
+     "app/views/layouts/_footer.html.erb",
+     "app/views/layouts/_header.html.erb",
      "app/views/layouts/brighter_planet.html.erb",
+     "brighter_planet_layout.gemspec",
      "lib/brighter_planet_layout.rb",
      "lib/brighter_planet_layout/railtie.rb",
+     "public/images/logo.png",
      "public/stylesheets/brighter_planet.css",
      "test/helper.rb",
      "test/test_brighter_planet_layout.rb"
