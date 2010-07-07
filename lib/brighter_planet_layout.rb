@@ -1,0 +1,1 @@
+require 'brighter_planet_layout/railtie' if defined?(Rails::Railtie)
