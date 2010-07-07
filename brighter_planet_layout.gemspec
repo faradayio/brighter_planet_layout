@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{brighter_planet_layout}
-  s.version = "0.1.8"
+  s.version = "0.1.9"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Andy Rossmeissl"]
@@ -25,12 +25,21 @@ Gem::Specification.new do |s|
      "VERSION",
      "app/helpers/brighter_planet_helper.rb",
      "app/views/layouts/_footer.html.erb",
+     "app/views/layouts/_head.html.erb",
      "app/views/layouts/_header.html.erb",
      "app/views/layouts/brighter_planet.html.erb",
      "brighter_planet_layout.gemspec",
      "lib/brighter_planet_layout.rb",
      "lib/brighter_planet_layout/railtie.rb",
+     "public/404.html",
+     "public/422.html",
+     "public/500.html",
      "public/favicon.ico",
+     "public/javascripts/controls.js",
+     "public/javascripts/dragdrop.js",
+     "public/javascripts/effects.js",
+     "public/javascripts/prototype.js",
+     "public/javascripts/rails.js",
      "public/stylesheets/brighter_planet.css",
      "public/stylesheets/fonts/KievitOT-Bold.otf",
      "public/stylesheets/fonts/KievitOT-BoldItalic.otf",
@@ -44,7 +53,16 @@ Gem::Specification.new do |s|
      "public/stylesheets/fonts/KievitWebPro-Ita.woff",
      "public/stylesheets/fonts/KievitWebPro.eot",
      "public/stylesheets/fonts/KievitWebPro.woff",
+     "public/stylesheets/images/bg.png",
+     "public/stylesheets/images/cards.ai",
+     "public/stylesheets/images/cards.png",
+     "public/stylesheets/images/emitters.ai",
+     "public/stylesheets/images/emitters.png",
+     "public/stylesheets/images/gears.ai",
+     "public/stylesheets/images/gears.png",
      "public/stylesheets/images/logo.png",
+     "public/stylesheets/images/prism.ai",
+     "public/stylesheets/images/prism.png",
      "test/helper.rb",
      "test/test_brighter_planet_layout.rb"
   ]
