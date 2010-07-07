@@ -120,6 +120,76 @@ h1, h2, h3, h4, h5, h6, p, ol, ul, li, dl, dt, dd {
   background: rgba(0,0,0,0.1);
 }
 
+#nav {
+  background-image:
+    -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        color-stop(0, rgb(0,79,140)),
+        color-stop(1, rgb(0,39,69))
+    );
+  background-image:
+    -moz-linear-gradient(
+        center top,
+        rgb(0,79,140) 0%,
+        rgb(0,39,69) 100%
+    );
+  overflow: auto;
+  font-size: 11px;
+}
+
+#nav h3 {
+  float: left;
+  width: 150px;
+  text-align: right;
+  color: silver;
+  text-shadow: -1px -1px 0px black;
+  padding: 1px 0 0;
+  font-size: 12px;
+  visibility: hidden;
+}
+
+#nav h3:after {
+  content: " →";
+}
+
+#nav ul {
+  list-style: none;
+  overflow: auto;
+  margin: 0 0 0 165px;
+}
+
+#nav ul li {
+  border-left: 1px solid black;
+  float: left;
+  width: 100px;
+}
+
+#nav ul li a {
+  border-left: 1px solid #555;
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: silver;
+  line-height: 1;
+  text-shadow: -1px -1px 0px black;
+  padding: 5px 0;
+}
+
+#nav li:last-child {
+  border-right: 1px solid #555;
+}
+
+#nav li:last-child a {
+  border-right: 1px solid black;
+}
+
+#nav ul li a:hover {
+  background: rgba(0,0,0,0.1);
+}
+
 #title {
   background-color: #5FBBFF;
   background-repeat: no-repeat;
