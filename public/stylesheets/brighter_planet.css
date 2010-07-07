@@ -32,6 +32,22 @@
   font-style: italic;
 }
 
+@font-face {
+  font-family: 'DejaVu Mono';
+  src: url('fonts/DejaVuSansMono.eot');
+  src: local('☺'), url("fonts/DejaVuSansMono.ttf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'DejaVu Mono';
+  src: url('fonts/DejaVuSansMono-Oblique.eot');
+  src: local('☺'), url("fonts/DejaVuSansMono-Oblique.ttf") format("opentype");
+  font-weight: normal;
+  font-style: italic;
+}
+
 /* ---------- */
 
 body {
@@ -47,6 +63,10 @@ body, input, select {
 h1, h2, h3, h4, h5, h6, p, ol, ul, li, dl, dt, dd {
   margin: 0;
   padding: 0;
+}
+
+pre {
+  font-family: "DejaVu Mono", monospace;
 }
 
 #header {
