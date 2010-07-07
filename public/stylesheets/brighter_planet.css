@@ -76,6 +76,11 @@ h1, h2, h3, h4, h5, h6, p, ol, ul, li, dl, dt, dd {
   float: left;
   width: 129px;
   margin: 13px;
+  background: url(images/logo.png) no-repeat
+}
+
+#header h1 span {
+  display: none;
 }
 
 #header ul {
