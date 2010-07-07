@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{brighter_planet_layout}
-  s.version = "0.1.9"
+  s.version = "0.1.10"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Andy Rossmeissl"]
@@ -54,14 +54,10 @@ Gem::Specification.new do |s|
      "public/stylesheets/fonts/KievitWebPro.eot",
      "public/stylesheets/fonts/KievitWebPro.woff",
      "public/stylesheets/images/bg.png",
-     "public/stylesheets/images/cards.ai",
      "public/stylesheets/images/cards.png",
-     "public/stylesheets/images/emitters.ai",
      "public/stylesheets/images/emitters.png",
-     "public/stylesheets/images/gears.ai",
      "public/stylesheets/images/gears.png",
      "public/stylesheets/images/logo.png",
-     "public/stylesheets/images/prism.ai",
      "public/stylesheets/images/prism.png",
      "test/helper.rb",
      "test/test_brighter_planet_layout.rb"
