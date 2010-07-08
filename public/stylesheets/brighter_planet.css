@@ -3,7 +3,7 @@
 @font-face {
   font-family: 'Brighter Planet';
   src: url('fonts/KievitWebPro.eot');
-  src: local('☺'), url("/stylesheets/fonts/KievitWebPro.woff") format("woff"), url("fonts/KievitOT-Regular.otf") format("opentype");
+  src: local('☺'), url("fonts/KievitWebPro.woff") format("woff"), url("fonts/KievitOT-Regular.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
 }
