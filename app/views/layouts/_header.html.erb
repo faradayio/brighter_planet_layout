@@ -11,6 +11,7 @@
 <%= render :partial => 'layouts/title' %> 
 </div>
 
+<% if flash[:error] or flash[:notice] %>
 <div id="flash">
 <% if error = flash[:error] %>
 <p class="flash error"><%= error %></p>
@@ -18,5 +19,5 @@
 <p class="flash notice"><%= notice %></p>
 <% end %>
 </div>
-
+<% end %>
 
