@@ -69,6 +69,10 @@ pre {
   font-family: "DejaVu Mono", monospace;
 }
 
+a {
+  outline: none;
+}
+
 #header {
   background-image:
     -webkit-gradient(
