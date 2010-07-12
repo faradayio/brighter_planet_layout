@@ -56,7 +56,7 @@ body {
   background: #222 url(images/bg.png) repeat-y;
 }
 
-body, input, select {
+body, input, select, button {
   font-family: "Brighter Planet", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", sans-serif;
 }
 
@@ -307,7 +307,7 @@ a {
   margin: 20px 0 0 150px;
 }
 
-#content form p.action input[type=submit] {
+#content form p.action input[type=submit], #content form p.action button {
   background-image:
     -webkit-gradient(
       linear,
