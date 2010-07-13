@@ -11,6 +11,7 @@ begin
     gem.homepage = "http://github.com/brighterplanet/brighter_planet_layout"
     gem.authors = ["Andy Rossmeissl"]
     gem.add_development_dependency "thoughtbot-shoulda", ">= 0"
+    gem.add_dependency 'ultraviolet', '0.10.2', :require => 'uv'
     gem.files.reject! { |fn| fn.downcase =~ /\.ai$/ }
   end
   Jeweler::GemcutterTasks.new
