@@ -7,7 +7,7 @@ module BrighterPlanetHelper
     end
   end
   
-  def highlight_syntax(code, lang = :ruby)
-    Uv.parse(code, 'xhtml', lang, false, :idle).html_safe
+  def syntax(code, lang = 'ruby')
+    ::Uv.parse(code, 'xhtml', lang, false, :idle).html_safe
   end
 end
