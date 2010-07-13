@@ -67,6 +67,14 @@ h1, h2, h3, h4, h5, h6, p, ol, ul, li, dl, dt, dd {
 
 pre {
   font-family: "DejaVu Mono", monospace;
+  display: block;
+  line-height: 1.4;
+  overflow: auto;
+  background: white;
+  padding: 10px;
+  margin: 10px -15px;
+  border-top: 1px solid #ddd;
+  -moz-box-shadow: inset 0 5px 5px #eee;
 }
 
 a {
@@ -272,6 +280,30 @@ a img {
   margin: 25px 10px 20px 150px;
   text-shadow: 1px 1px 0 white;
   color: gray;
+}
+
+#content h3 {
+  margin: 30px 15px 0 150px;
+}
+
+#content>ul {
+  list-style: square;
+  margin: 10px 15px 10px 150px;
+  padding: 0 0 0 1em
+}
+
+#content p.cta {
+  border: 1px solid #5FBBFF;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  overflow: auto;
+}
+
+p.cta a {
+  display: block;
+  padding: 10px;
+  color: blue;
 }
 
 #content form dl dt {
@@ -797,5 +829,3 @@ ul.pages li a:hover {
   -webkit-border-radius: 3px;
   border-radius: 3px;
 }
-
-
