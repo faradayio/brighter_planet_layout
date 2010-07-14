@@ -1,10 +1,13 @@
 module BrighterPlanetLayout
   class Railtie < Rails::Railtie
-    config.app_middleware.use '::ActionDispatch::Static', File.expand_path(File.join(File.dirname(__FILE__), '..', '..', 'public'))    
     initializer 'brighter_planet_layout.add_paths' do |app|
-      app.paths.app.views << File.expand_path(File.join(File.dirname(__FILE__), '..', '..', 'app', 'views'))
+      app.paths.app.views.push BrighterPlanetLayout.view_path
+    end
+    initializer 'brighter_planet_layout.copy_static_files_to_web_server_document_root' do |app|
+      BrighterPlanetLayout.copy_static_files_to_web_server_document_root
     end
     config.to_prepare do
+      require BrighterPlanetLayout.helper_file
       ApplicationController.helper BrighterPlanetHelper
       ApplicationController.layout 'brighter_planet'
     end
