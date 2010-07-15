@@ -65,8 +65,11 @@ h1, h2, h3, h4, h5, h6, p, ol, ul, li, dl, dt, dd {
   padding: 0;
 }
 
-pre {
+pre, kbd {
   font-family: "DejaVu Mono", monospace;
+}
+
+pre {
   display: block;
   line-height: 1.4;
   overflow: auto;
