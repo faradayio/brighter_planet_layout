@@ -46,7 +46,7 @@ module BrighterPlanetLayout
   end
   
   def self.serve_static_files_using_rack?
-    not Rails.env.production?
+    Rails.configuration.serve_static_assets or not Rails.env.production?
   end
 end
 
