@@ -1,5 +1,8 @@
 module BrighterPlanetLayout
   class Railtie < Rails::Railtie
+    rake_tasks do
+      load 'brighter_planet_layout/rake_tasks.rb'
+    end
     initializer 'brighter_planet_layout' do |app|
       app.paths.app.views.push BrighterPlanetLayout.view_path
       if BrighterPlanetLayout.serve_static_files_using_rack?

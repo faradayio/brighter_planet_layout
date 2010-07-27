@@ -42,7 +42,7 @@ module BrighterPlanetLayout
   end
   
   def self.copy_static_files?
-    not serve_static_files_using_rack? and not layout_warning_installed?
+    not heroku? and not serve_static_files_using_rack? and not layout_warning_installed?
   end
   
   def self.heroku?
@@ -50,7 +50,7 @@ module BrighterPlanetLayout
   end
   
   def self.serve_static_files_using_rack?
-    heroku? or not Rails.env.production?
+    not heroku? and not Rails.env.production?
   end
 end
 
