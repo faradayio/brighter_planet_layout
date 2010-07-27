@@ -45,8 +45,12 @@ module BrighterPlanetLayout
     not serve_static_files_using_rack? and not layout_warning_installed?
   end
   
+  def self.heroku?
+    File.readable? '/home/heroku_rack/heroku.ru'
+  end
+  
   def self.serve_static_files_using_rack?
-    Rails.configuration.serve_static_assets or not Rails.env.production?
+    heroku? or not Rails.env.production?
   end
 end
 
