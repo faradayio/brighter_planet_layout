@@ -250,6 +250,10 @@ a img {
   color: blue;
 }
 
+#title h2 a {
+  color: inherit;
+}
+
 #title h2 {
   color: #333;
 }
