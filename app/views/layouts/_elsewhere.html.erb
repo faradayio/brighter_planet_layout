@@ -14,7 +14,7 @@
         <% blog_post = ::BrighterPlanetLayout.latest_blog_post -%>
         <% if blog_post %>
           <div id="blog" class="<%= blog_post.author.downcase.dasherize %>">
-            <p><%= link_to blog_post.title, blog_post.link %> by <%= blog_post.author %> <%= time_ago_in_words blog_post.updated %> ago on <%= link_to 'Safety in Numbers', 'http://numbers.brighterplanet.com' %>, our blog</p>
+            <p><%= link_to blog_post.title, blog_post.link %> <span>by <%= blog_post.author %> <%= time_ago_in_words blog_post.updated %> ago on <%= link_to 'Safety in Numbers', 'http://numbers.brighterplanet.com' %>, our blog</span></p>
           </div>
         <% end %>
       <% end %>
