@@ -723,7 +723,7 @@ p.flash.error:before {
 #footer #map #elsewhere>div:after {
   content: "◣";
   position: absolute;
-  bottom: 5px;
+  bottom: 8px;
   right: 0;
   width: 50px;
   color: #222;
@@ -732,7 +732,7 @@ p.flash.error:before {
 
 #footer #map #elsewhere #twitter {
   background: url(images/radiant_earth-small.png) no-repeat 100% 100%;
-  margin: 0 0 15px;
+  margin: 0 0 25px;
 }
 
 #footer #map #elsewhere #blog.derek {

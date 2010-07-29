@@ -69,7 +69,6 @@ Gem::Specification.new do |s|
      "public/stylesheets/idle.css",
      "public/stylesheets/images/bg.png",
      "public/stylesheets/images/cards.png",
-     "public/stylesheets/images/emitters.png",
      "public/stylesheets/images/gears.png",
      "public/stylesheets/images/logo.png",
      "public/stylesheets/images/meter.png",
