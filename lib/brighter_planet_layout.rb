@@ -54,15 +54,15 @@ module BrighterPlanetLayout
   end
   
   def self.application_name
-    ::Rails::VERSION::MAJOR == 3 ? ::Rails.application.name : ::APPLICATION_NAME
+    (::Rails::VERSION::MAJOR == 3) ? ::Rails.application.name : ::APPLICATION_NAME
   end
   
   def self.google_analytics_ua_number
-    ::Rails::VERSION::MAJOR == 3 ? ::Rails.application.google_analytics_ua_number : ::GOOGLE_ANALYTICS_UA_NUMBER
+    (::Rails::VERSION::MAJOR == 3) ? ::Rails.application.google_analytics_ua_number : ::GOOGLE_ANALYTICS_UA_NUMBER
   end
   
   def self.rails_root
-    ::Rails.respond_to? :root ? ::Rails.root : ::RAILS_ROOT
+    ::Rails.respond_to?(:root) ? ::Rails.root : ::RAILS_ROOT
   end
 end
 
