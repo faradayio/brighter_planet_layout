@@ -53,7 +53,7 @@
 body {
   margin: 0;
   font-size: 13px;
-  background: #222 url(images/bg.png) repeat-y;
+  background: #111;
 }
 
 body, input, select, button {
