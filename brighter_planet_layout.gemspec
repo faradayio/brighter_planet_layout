@@ -72,6 +72,7 @@ Gem::Specification.new do |s|
      "public/stylesheets/images/emitters.png",
      "public/stylesheets/images/gears.png",
      "public/stylesheets/images/logo.png",
+     "public/stylesheets/images/meter.png",
      "public/stylesheets/images/prism.png",
      "public/stylesheets/images/radiant_earth-small.png",
      "rails/init.rb",

@@ -593,7 +593,7 @@ p.flash.error:before {
   color: silver;
 }
 
-#footer #map #middleware, #footer #map #status {
+#footer #map #middleware, #footer #map #applications {
   margin: 25px 30px 0 0;
   float: left;
   width: 225px;
@@ -659,57 +659,54 @@ p.flash.error:before {
   border-bottom: 1px solid black;
 }
 
-#footer #map #status h3 {
-  padding-left: 10px;
+#footer #map #applications {
+  margin: 25px 20px 0 0;
 }
 
-#footer #map #status p {
-  float: right;
-  width: 100px;
-  text-align: right;
-  color: gray;
-  padding-right: 10px;
-  font-size: 11px;
+#footer #map #applications h3 {
+  display: none;
 }
 
-#footer #map #status p a {
-  color: inherit;
-}
-
-#footer #map #status dl {
-  background: black;
+#footer #map #applications ul {
+  background: #080808;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   border-radius: 5px;
-  overflow: auto;
-  padding-bottom: 1px;
-  margin: 5px 0 0;
-  line-height: 13px;
+  -moz-box-shadow: -1px -1px 0 black;
+  -webkit-box-shadow: -1px -1px 0 black;
+  box-shadow: -1px -1px 0 black;
+  list-style: none;
 }
 
-#footer #map #status dl dt {
-  float: left;
-  width: 120px;
+#footer #map #applications ul li {
   padding: 10px;
   border-bottom: 1px solid #111;
-  clear: left;
+  border-top: 1px solid black;
   color: gray;
 }
 
-#footer #map #status dl dd {
-  float: left;
-  width: 64px;
-  padding: 10px;
-  border-bottom: 1px solid #111;
-  clear: right;
-  color: #2DB56A;
-  text-transform: uppercase;
-  text-align: right;
-  font-size: 11px;
+#footer #map #applications ul li:first-child {
+  border-top: none;
 }
 
-#footer #map #status dl .last {
-  border: none;
+#footer #map #applications ul li:last-child {
+  border-bottom: none;
+}
+
+#footer #map #applications ul li.cards {
+  padding-top: 70px;
+  text-align: center;
+  background: url(images/cards.png) no-repeat 50% 4px;
+}
+
+#footer #map #applications ul li.profiler {
+  font-size: 11px;
+  padding-left: 50px;
+  background: url(images/meter.png) no-repeat 10px 60%;
+}
+
+#footer #map #applications ul li a {
+  color: silver;
 }
 
 #footer #map #elsewhere {
@@ -723,25 +720,23 @@ p.flash.error:before {
   position: relative;
 }
 
-#footer #map #elsewhere>div:before {
-  content: "◢";
+#footer #map #elsewhere>div:after {
+  content: "◣";
   position: absolute;
   bottom: 5px;
-  left: 0;
+  right: 0;
   width: 50px;
-  text-align: right;
   color: #222;
-  text-shadow: -1px -1px 0 black;
   font-size: 18px;
 }
 
 #footer #map #elsewhere #twitter {
-  background: url(images/radiant_earth-small.png) no-repeat 8px 100%;
+  background: url(images/radiant_earth-small.png) no-repeat 100% 100%;
   margin: 0 0 15px;
 }
 
 #footer #map #elsewhere #blog.derek {
-  background: url(http://numbers.brighterplanet.com/stylesheets/images/derek.jpg) no-repeat 0 100%;
+  background: url(http://numbers.brighterplanet.com/stylesheets/images/derek.jpg) no-repeat 100% 100%;
 }
 
 #footer #map #elsewhere>div p {
@@ -757,7 +752,7 @@ p.flash.error:before {
 
 #footer #map #elsewhere p {
   padding: 10px;
-  margin: 0 0 0 48px;
+  margin: 0 48px 0 0;
 }
 
 #footer #map #elsewhere p span {

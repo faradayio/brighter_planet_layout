@@ -17,7 +17,7 @@
       <h1>Brighter Planet</h1>
       <p class="slogan">Carbon is everywhere</p>
       <p class="description">Enterprise-grade cloud technology for climate intelligence.</p>
-      <p class="description"><%= link_to_homesite 'About us', 'about' %> &nbsp;&middot;&nbsp; <%= link_to 'Our blog', 'http://numbers.brighterplanet.com' %></p>
+      <p class="description"><%= link_to_homesite 'About us', 'about' %></p>
     </div>
     <div id="middleware">
       <div class="main">
@@ -25,11 +25,14 @@
         <p>Real-time, scalable web services to enhance your business applications. <%= link_to_homesite 'Learn more', 'middleware' %></p>
       </div>
       <ul class="links">
-        <li><%= link_to_homesite 'Brighter Planet Visa credit and debit cards', 'cards' %> powered by Carbon Middleware technology</li>
-        <li><%= link_to_homesite 'Carbon footprint profiles', 'sessions/new' %> powered by Carbon Middleware technology</li>
       </ul>
     </div>
     <div id="applications">
+      <h3>Live applications</h3>
+      <ul>
+        <li class="cards"><%= link_to_homesite 'Visa credit and debit cards', 'cards' %> powered by Carbon Middleware technology</li>
+        <li class="profiler"><%= link_to_homesite 'Carbon footprint profiles', 'sessions/new' %> powered by Carbon Middleware technology</li>
+      </ul>
     </div>
 <%= render :partial => 'layouts/elsewhere' %>
   </div>
