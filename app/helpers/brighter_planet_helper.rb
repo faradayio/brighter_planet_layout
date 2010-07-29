@@ -14,6 +14,7 @@ module BrighterPlanetHelper
   
   def link_to_homesite(text, path = '')
     path.insert 0, 'http://brighterplanet.com/' unless ::BrighterPlanetLayout.application_name == 'Brighter Planet'
+    path << '/' if path.empty?
     link_to text, path
   end
 end
