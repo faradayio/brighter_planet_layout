@@ -2,14 +2,14 @@
   <div id="shortcuts">
     <h3>Shortcuts</h3>
     <ul>
-      <li><%= link_to 'Home', 'http://brighterplanet.com' %></li>
+      <li><%= link_to_homesite 'Home' %></li>
       <li><%= link_to 'Blog', 'http://numbers.brighterplanet.com' %></li>
       <li><%= link_to 'Dev', 'http://brighterplanet.github.com' %></li>
       <li><%= link_to 'Keys', 'http://keys.brighterplanet.com' %></li>
       <li><%= link_to 'Carbon', 'http://carbon.brighterplanet.com' %></li>
       <li><%= link_to 'Data', 'http://data.brighterplanet.com' %></li>
-      <li><%= link_to 'Cards', 'http://brighterplanet.com/cards' %></li>
-      <li><%= link_to 'Footprint', 'http://brighterplanet.com/sessions/new' %></li>
+      <li><%= link_to_homesite 'Cards', 'cards' %></li>
+      <li><%= link_to_homesite 'Footprint', 'sessions/new' %></li>
     </ul>
   </div>
   <div id="map">
@@ -17,16 +17,16 @@
       <h1>Brighter Planet</h1>
       <p class="slogan">Carbon is everywhere</p>
       <p class="description">Enterprise-grade cloud technology for climate intelligence.</p>
-      <p class="description"><%= link_to 'About us', 'http://brighterplanet.com/about' %> &nbsp;&middot;&nbsp; <%= link_to 'Our blog', 'http://numbers.brighterplanet.com' %></p>
+      <p class="description"><%= link_to_homesite 'About us', 'about' %> &nbsp;&middot;&nbsp; <%= link_to 'Our blog', 'http://numbers.brighterplanet.com' %></p>
     </div>
     <div id="middleware">
       <div class="main">
         <h3>Carbon Middleware</h3>
-        <p>Real-time, scalable web services to enhance your business applications. <%= link_to 'Learn more', 'http://brighterplanet.com/middleware' %></p>
+        <p>Real-time, scalable web services to enhance your business applications. <%= link_to_homesite 'Learn more', 'middleware' %></p>
       </div>
       <ul class="links">
-        <li><%= link_to 'Brighter Planet Visa credit and debit cards', 'http://brighterplanet.com/cards' %> powered by Carbon Middleware technology</li>
-        <li><%= link_to 'Carbon footprint profiles', 'http://brighterplanet.com/sessions/new' %> powered by Carbon Middleware technology</li>
+        <li><%= link_to_homesite 'Brighter Planet Visa credit and debit cards', 'cards' %> powered by Carbon Middleware technology</li>
+        <li><%= link_to_homesite 'Carbon footprint profiles', 'sessions/new' %> powered by Carbon Middleware technology</li>
       </ul>
     </div>
     <div id="status">
