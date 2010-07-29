@@ -29,27 +29,8 @@
         <li><%= link_to_homesite 'Carbon footprint profiles', 'sessions/new' %> powered by Carbon Middleware technology</li>
       </ul>
     </div>
-    <div id="status">
-      <p><%= link_to 'Details', 'http://twitter.com/brighterplanet' %></p>
-      <h3>Service status</h3>
-      <dl>
-        <dt>Emission estimates</dt>
-        <dd>Ready</dd>
-        <dt>Climate data</dt>
-        <dd>Ready</dd>
-        <dt>Keyserver</dt>
-        <dd>Ready</dd>
-        <dt class="last">Profiles</dt>
-        <dd class="last">Ready</dd>
-      </dl>
+    <div id="applications">
     </div>
-    <div id="elsewhere">
-      <div id="twitter">
-        <p>Interesting article: The powers of cap and trade, and why demonizing it was a serious mistake <a href="http://cot.ag/bAcOnm">http://cot.ag/bAcOnm</a> <span>via <%= link_to '@brighterplanet', 'http://twitter.com/brighterplanet' %></p>
-      </div>
-      <div id="blog" class="derek">
-        <p><%= link_to 'Bundler to the Max', 'http://numbers.brighterplanet.com/2010/07/28/bundler-to-the-max' %> by Derek yesterday on <%= link_to 'Safety in Numbers', 'http://numbers.brighterplanet.com' %>, our blog</p>
-      </div>
-    </div>
+<%= render :partial => 'layouts/elsewhere' %>
   </div>
 </div>
