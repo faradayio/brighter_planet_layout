@@ -11,7 +11,7 @@
   <%= render_or_nothing :partial => 'layouts/head' %>
   <%= yield :head %>
 </head>
-<body>
+<body<%= " class=\"#{ @bodyclass }\"" if @bodyclass %>>
 
 <%= render :partial => 'layouts/google_analytics' %>
 
