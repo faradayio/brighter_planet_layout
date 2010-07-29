@@ -88,6 +88,10 @@ a img {
   border: none;
 }
 
+.sub {
+  font-size: smaller;
+}
+
 #header {
   background-image:
     -webkit-gradient(
@@ -589,14 +593,17 @@ p.flash.error:before {
   color: silver;
 }
 
-#footer #map #middleware {
+#footer #map #middleware, #footer #map #status {
+  margin: 25px 30px 0 0;
   float: left;
-  width: 320px;
-  margin: 25px 80px 0 0;
+  width: 225px;
+}
+
+#footer #map #middleware {
   font-size: 11px;
 }
 
-#footer #map #middleware h3 {
+#footer #map h3 {
   color: silver;
   text-transform: uppercase;
   font-weight: normal;
@@ -607,6 +614,10 @@ p.flash.error:before {
   color: gray;
 }
 
+#footer #map #middleware p a {
+  color: #999;
+}
+
 #footer #map #middleware ul.links {
   list-style: none;
   border-top: 1px solid #222;
@@ -615,6 +626,7 @@ p.flash.error:before {
 
 #footer #map #middleware ul.links li {
   margin: 0 0 7px;
+  color: #444;
 }
 
 #footer #map #middleware ul.links li:before {
@@ -637,143 +649,123 @@ p.flash.error:before {
 
 #footer #map #middleware ul.links li a {
   color: gray;
-}
-
-#footer #map #middleware ul.industries {
-  list-style: none;
-  margin: 25px 0 0;
-  color: gray;
-  border-left: 1px solid black;
-  border-top: 1px solid black;
-  border-bottom: 1px solid #222;
-  border-right: 1px solid #222;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
-}
-
-#footer #map #middleware ul.industries li {
-  background: #050505;
-  border-top: 1px solid black;
-  border-bottom: 1px solid #222;
-}
-
-#footer #map #middleware ul.industries li:first-child {
-  border-top: none;
-  -moz-border-radius: 5px 5px 0 0;
-  -webkit-border-radius: 5px 5px 0 0;
-  border-radius: 5px 5px 0 0;
-}
-
-#footer #map #middleware ul.industries li:last-child {
-  border-bottom: none;
-  -moz-border-radius: 0 0 5px 5px;
-  -webkit-border-radius: 0 0 5px 5px;
-  border-radius: 0 0 5px 5px;
-}
-
-#footer #map #middleware ul.industries li a {
-  padding: 7px 7px 7px 32px;
-  background-repeat: no-repeat;
-  background-position: 5px 50%;
   display: block;
-  text-decoration: none;
-  color: gray;
-}
-
-#footer #map #middleware ul.industries a:hover {
-  background-color: black;
-}
-
-#footer #map #middleware ul.industries li a strong {
-  color: silver;
-  text-transform: uppercase;
-  font-weight: normal;
-  text-decoration: underline;
-  padding: 0 2px 0 0;
-}
-
-#footer #map #middleware ul.industries li.prism a {
-  background-image: url(images/prism.png);
 }
 
 #footer #map #middleware .main {
   padding: 0 0 10px 80px;
   background: url(images/gears.png) no-repeat;
-  min-height: 52px;
+  min-height: 47px;
   border-bottom: 1px solid black;
 }
-  
 
-#footer #map #consumer {
+#footer #map #status h3 {
+  padding-left: 10px;
+}
+
+#footer #map #status p {
+  float: right;
+  width: 100px;
+  text-align: right;
+  color: gray;
+  padding-right: 10px;
+  font-size: 11px;
+}
+
+#footer #map #status p a {
+  color: inherit;
+}
+
+#footer #map #status dl {
+  background: black;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  overflow: auto;
+  padding-bottom: 1px;
+  margin: 5px 0 0;
+  line-height: 13px;
+}
+
+#footer #map #status dl dt {
+  float: left;
+  width: 120px;
+  padding: 10px;
+  border-bottom: 1px solid #111;
+  clear: left;
+  color: gray;
+}
+
+#footer #map #status dl dd {
+  float: left;
+  width: 64px;
+  padding: 10px;
+  border-bottom: 1px solid #111;
+  clear: right;
+  color: #2DB56A;
+  text-transform: uppercase;
+  text-align: right;
+  font-size: 11px;
+}
+
+#footer #map #status dl .last {
+  border: none;
+}
+
+#footer #map #elsewhere {
   float: left;
   width: 320px;
-  background: url(images/cards.png) no-repeat;
-  min-height: 200px;
-}
-
-#footer #map #consumer #cards {
-  margin: 28px 0 0;
-  padding: 0 0 30px 160px;
-  font-size: 11px;
-  border-bottom: 1px solid black;
-}
-
-#footer #map #consumer h4 {
+  margin: 25px 0 0;
   color: silver;
-  font-weight: normal;
-  text-transform: uppercase;
-  margin: 0 0 5px 0;
 }
 
-#footer #map #consumer h4 a {
-  color: silver;
-  text-decoration: none;
+#footer #map #elsewhere>div {
+  position: relative;
 }
 
-#footer #map #consumer p {
-  color: gray;
-}
-
-#footer #map #consumer #profiler {
-  border-top: 1px solid #333;
-  padding: 0 90px 15px 0;
-  font-size: 11px;
-  background: url(images/emitters.png) no-repeat 100% 10px;
-  min-height: 61px;
-  border-bottom: 1px solid black;
-}
-
-#footer #map #consumer #profiler h4 {
-  padding: 15px 0 0;
-}
-
-#footer #map #consumer>p {
-  border-top: 1px solid #333;
-  padding: 10px 0 0;
-  font-size: 11px;
-}
-
-#footer #map #consumer a {
-  color: gray;
-}
-
-#footer #map #consumer>p:before {
-  content: "▶";
-  display: block;
-  float: left;
-  width: 1em;
-  background: #555;
+#footer #map #elsewhere>div:before {
+  content: "◢";
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  width: 50px;
+  text-align: right;
   color: #222;
-  padding: 0 0 1px 2px;
-  line-height: 14px;
-  margin: 0 5px 0 0;
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
-  text-shadow: none;
-  font-size: 13px;
-  -moz-box-shadow: black 1px 1px 0;
+  text-shadow: -1px -1px 0 black;
+  font-size: 18px;
+}
+
+#footer #map #elsewhere #twitter {
+  background: url(images/radiant_earth-small.png) no-repeat 8px 100%;
+  margin: 0 0 15px;
+}
+
+#footer #map #elsewhere #blog.derek {
+  background: url(http://numbers.brighterplanet.com/stylesheets/images/derek.jpg) no-repeat 0 100%;
+}
+
+#footer #map #elsewhere>div p {
+  background: #222;
+  -moz-box-shadow: -1px -1px 0 black;
+  -webkit-box-shadow: -1px -1px 0 black;
+  box-shadow: -1px -1px 0 black;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  text-shadow: 1px 1px 0 black;
+}
+
+#footer #map #elsewhere p {
+  padding: 10px;
+  margin: 0 0 0 48px;
+}
+
+#footer #map #elsewhere p span {
+  color: gray;
+}
+
+#footer #map #elsewhere p a {
+  color: inherit;
 }
 
 ul.pages {

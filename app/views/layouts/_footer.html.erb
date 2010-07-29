@@ -3,18 +3,13 @@
     <h3>Shortcuts</h3>
     <ul>
       <li><%= link_to 'Home', 'http://brighterplanet.com' %></li>
-      <li><%= link_to 'Blog', 'http://blog.brighterplanet.com' %></li>
-      <!-- FIXME andy
-      <li><%= link_to 'Prism', 'http://brighterplanet.com/applications/prism' %></li>
-      -->
+      <li><%= link_to 'Blog', 'http://numbers.brighterplanet.com' %></li>
       <li><%= link_to 'Dev', 'http://brighterplanet.github.com' %></li>
       <li><%= link_to 'Keys', 'http://keys.brighterplanet.com' %></li>
       <li><%= link_to 'Carbon', 'http://carbon.brighterplanet.com' %></li>
       <li><%= link_to 'Data', 'http://data.brighterplanet.com' %></li>
-      <!-- FIXME andy
-      <li><%= link_to 'Cards', 'http://cards.brighterplanet.com' %></li>
-      <li><%= link_to 'Footprint', 'http://profiles.brighterplanet.com' %></li>
-      -->
+      <li><%= link_to 'Cards', 'http://brighterplanet.com/cards' %></li>
+      <li><%= link_to 'Footprint', 'http://brighterplanet.com/sessions/new' %></li>
     </ul>
   </div>
   <div id="map">
@@ -26,33 +21,35 @@
     </div>
     <div id="middleware">
       <div class="main">
-        <h3>Carbon middleware</h3>
-        <p>Real-time, scalable web services to enhance your business applications</p>
+        <h3>Carbon Middleware</h3>
+        <p>Real-time, scalable web services to enhance your business applications. <%= link_to 'Learn more', 'http://brighterplanet.com/products/carbon_middleware' %></p>
       </div>
       <ul class="links">
-        <li><%= link_to 'Learn about how carbon middleware works', 'http://brighterplanet.com/products/carbon_middleware' %></li>
-        <li><%= link_to 'Information for developers', 'http://brighterplanet.github.com' %></li>
+        <li><%= link_to 'Brighter Planet Visa credit and debit cards', 'http://brighterplanet.com/cards' %> powered by Carbon Middleware technology</li>
+        <li><%= link_to 'Carbon footprint profiles', 'http://brighterplanet.com/sessions/new' %> powered by Carbon Middleware technology</li>
       </ul>
-      <!-- FIXME andy
-      <ul class="industries">
-        <li class="prism"><%= link_to '<strong>Prism</strong> carbon analytics for the payments industry'.html_safe, '#FIXME' %></li>
-        <li class="alpha"><%= link_to '<strong>Alpha</strong> for the shipping and logistics industry'.html_safe, '#FIXME' %></li>
-        <li class="beta"><%= link_to '<strong>Beta</strong> customer carbon information for the travel industry'.html_safe, '#FIXME' %></li>
-      </ul>
-      -->
     </div>
-    <div id="consumer">
-      <div id="cards">
-        <h4><a href="http://brighterplanet.com/products">Credit and debit cards</a></h4>
-        <p>Powered by Bank of America, Visa, and Brighter Planet's carbon middleware technology</p>
+    <div id="status">
+      <p><%= link_to 'Details', '#FIXME' %></p>
+      <h3>Service status</h3>
+      <dl>
+        <dt>Emission estimates</dt>
+        <dd>Ready</dd>
+        <dt>Climate data</dt>
+        <dd>Ready</dd>
+        <dt>Keyserver</dt>
+        <dd>Ready</dd>
+        <dt class="last">Profiles</dt>
+        <dd class="last">Ready</dd>
+      </dl>
+    </div>
+    <div id="elsewhere">
+      <div id="twitter">
+        <p>Interesting article: The powers of cap and trade, and why demonizing it was a serious mistake <a href="http://cot.ag/bAcOnm">http://cot.ag/bAcOnm</a> <span>via <%= link_to '@brighterplanet', 'http://twitter.com/brighterplanet' %></p>
       </div>
-      <div id="profiler">
-        <h4><a href="http://brighterplanet.com/users/me/footprint">Carbon profiler</a></h4>
-        <p>The world's most advanced carbon footprint calculator, powered by carbon middleware</p>
+      <div id="blog" class="derek">
+        <p><%= link_to 'Bundler to the Max', 'http://numbers.brighterplanet.com/2010/07/28/bundler-to-the-max' %> by Derek yesterday on <%= link_to 'Safety in Numbers', 'http://numbers.brighterplanet.com' %>, our blog</p>
       </div>
-      <!-- FIXME andy
-      <p><%= link_to 'See other apps powered by carbon middleware', '#FIXME' %></p>
-      -->
     </div>
   </div>
 </div>
