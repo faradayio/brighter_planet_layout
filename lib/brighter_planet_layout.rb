@@ -1,9 +1,13 @@
 require 'fileutils'
 require 'yaml'
+require 'simple-rss'
+require 'open-uri'
 
 module BrighterPlanetLayout
   GEM_ROOT = ::File.expand_path ::File.join(::File.dirname(__FILE__), '..')
   VERSION = ::YAML.load ::File.read(::File.join(GEM_ROOT, 'VERSION'))
+  TWITTER_RSS = 'http://twitter.com/statuses/user_timeline/15042574.rss'
+  BLOG_ATOM = 'http://numbers.brighterplanet.com/atom.xml'
   
   def self.view_path
     ::File.join GEM_ROOT, 'app', 'views'
@@ -63,6 +67,22 @@ module BrighterPlanetLayout
   
   def self.rails_root
     ::Rails.respond_to?(:root) ? ::Rails.root : ::RAILS_ROOT
+  end
+  
+  def self.latest_tweet
+    ::SimpleRSS.parse(open(TWITTER_RSS)).entries.first
+  rescue ::SocketError, ::Timeout::Error, ::Errno::ETIMEDOUT, ::Errno::ENETUNREACH, ::Errno::ECONNRESET, ::Errno::ECONNREFUSED
+    # nil
+  rescue ::NoMethodError
+    # nil
+  end
+  
+  def self.latest_blog_post
+    ::SimpleRSS.parse(open(BLOG_ATOM)).entries.first
+  rescue ::SocketError, ::Timeout::Error, ::Errno::ETIMEDOUT, ::Errno::ENETUNREACH, ::Errno::ECONNRESET, ::Errno::ECONNREFUSED
+    # nil
+  rescue ::NoMethodError
+    # nil
   end
 end
 

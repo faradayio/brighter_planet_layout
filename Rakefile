@@ -12,6 +12,7 @@ begin
     gem.authors = ["Andy Rossmeissl"]
     gem.add_development_dependency "thoughtbot-shoulda", ">= 0"
     gem.add_dependency 'ultraviolet', '0.10.2'
+    gem.add_dependency 'simple-rss', '1.2.3'
     gem.files.reject! { |fn| fn.downcase =~ /\.ai$/ }
   end
   Jeweler::GemcutterTasks.new

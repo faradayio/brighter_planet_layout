@@ -1,9 +1,21 @@
     <div id="elsewhere">
-      <div id="twitter">
-        <p>Interesting article: The powers of cap and trade, and why demonizing it was a serious mistake <a href="http://cot.ag/bAcOnm">http://cot.ag/bAcOnm</a> <span>via <%= link_to '@brighterplanet', 'http://twitter.com/brighterplanet' %></p>
-      </div>
-      <div id="blog" class="derek">
-        <p><%= link_to 'Bundler to the Max', 'http://numbers.brighterplanet.com/2010/07/28/bundler-to-the-max' %> by Derek yesterday on <%= link_to 'Safety in Numbers', 'http://numbers.brighterplanet.com' %>, our blog</p>
-      </div>
+      <% cache "#{__FILE__}/latest_tweet", :ttl => 3.minutes do %>
+        <% tweet = ::BrighterPlanetLayout.latest_tweet -%>
+        <% if tweet %>
+          <div id="twitter">
+            <p>
+              <%= auto_link tweet.description.sub('brighterplanet: ', '') %>
+              <span>via <%= link_to '@brighterplanet', 'http://twitter.com/brighterplanet' %></span>
+            </p>
+          </div>
+        <% end %>
+      <% end %>
+      <% cache "#{__FILE__}/latest_blog_post", :ttl => 3.minutes do %>
+        <% blog_post = ::BrighterPlanetLayout.latest_blog_post -%>
+        <% if blog_post %>
+          <div id="blog" class="<%= blog_post.author.downcase.dasherize %>">
+            <p><%= link_to blog_post.title, blog_post.link %> by <%= blog_post.author %> <%= time_ago_in_words blog_post.updated %> ago on <%= link_to 'Safety in Numbers', 'http://numbers.brighterplanet.com' %>, our blog</p>
+          </div>
+        <% end %>
+      <% end %>
     </div>
-
