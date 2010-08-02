@@ -9,7 +9,7 @@
       <li><%= link_to 'Carbon', 'http://carbon.brighterplanet.com' %></li>
       <li><%= link_to 'Data', 'http://data.brighterplanet.com' %></li>
       <li><%= link_to_homesite 'Cards', 'cards' %></li>
-      <li><%= link_to_homesite 'Footprint', 'sessions/new' %></li>
+      <li><%= link_to_homesite 'Footprint', 'users/me/footprint' %></li>
     </ul>
   </div>
   <div id="map">
@@ -33,7 +33,7 @@
       <h3>Live applications</h3>
       <ul>
         <li class="cards"><%= link_to_homesite 'Visa credit and debit cards', 'cards' %> powered by Carbon Middleware technology</li>
-        <li class="profiler"><%= link_to_homesite 'Carbon footprint profiles', 'log-in' %> powered by Carbon Middleware technology</li>
+        <li class="profiler"><%= link_to_homesite 'Carbon footprint profiles', 'users/me/footprint' %> powered by Carbon Middleware technology</li>
       </ul>
     </div>
 <%= render :partial => 'layouts/elsewhere' %>
