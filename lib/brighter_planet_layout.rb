@@ -71,6 +71,8 @@ module BrighterPlanetLayout
   
   def self.latest_tweet
     ::SimpleRSS.parse(open(TWITTER_RSS)).entries.first
+  rescue ::OpenURI::HTTPError
+    # nil
   rescue ::SocketError, ::Timeout::Error, ::Errno::ETIMEDOUT, ::Errno::ENETUNREACH, ::Errno::ECONNRESET, ::Errno::ECONNREFUSED
     # nil
   rescue ::NoMethodError
@@ -79,6 +81,8 @@ module BrighterPlanetLayout
   
   def self.latest_blog_post
     ::SimpleRSS.parse(open(BLOG_ATOM)).entries.first
+  rescue ::OpenURI::HTTPError
+    # nil
   rescue ::SocketError, ::Timeout::Error, ::Errno::ETIMEDOUT, ::Errno::ENETUNREACH, ::Errno::ECONNRESET, ::Errno::ECONNREFUSED
     # nil
   rescue ::NoMethodError
