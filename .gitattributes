@@ -1,0 +1,2 @@
+# http://www.bluishcoder.co.nz/2007/09/git-binary-files-and-cherry-picking.html
+*.ai -crlf -diff -merge
