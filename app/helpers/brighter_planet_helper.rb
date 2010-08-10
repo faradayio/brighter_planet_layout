@@ -13,8 +13,11 @@ module BrighterPlanetHelper
   end
   
   def link_to_homesite(text, path = '')
-    path.insert 0, 'http://brighterplanet.com/' unless ::BrighterPlanetLayout.application_name == 'Brighter Planet'
-    path << '/' if path.empty?
+    if ::BrighterPlanetLayout.application_name == 'Brighter Planet'
+      path.insert 0, '/'
+    else
+      path.insert 0, 'http://brighterplanet.com/'
+    end
     link_to text, path
   end
 end
