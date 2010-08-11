@@ -9,10 +9,9 @@ begin
     gem.description = %Q{Layouts, partials, stylesheets, and images}
     gem.email = "andy@rossmeissl.net"
     gem.homepage = "http://github.com/brighterplanet/brighter_planet_layout"
-    gem.authors = ["Andy Rossmeissl"]
-    gem.add_development_dependency "thoughtbot-shoulda", ">= 0"
-    gem.add_dependency 'ultraviolet', '0.10.2'
-    gem.add_dependency 'simple-rss', '1.2.3'
+    gem.authors = ["Andy Rossmeissl", "Seamus Abshere"]
+    gem.add_dependency 'ultraviolet', '>=0.10.2'
+    gem.add_dependency 'simple-rss', '>=1.2.3'
     gem.files.reject! { |fn| fn.downcase =~ /\.ai$/ }
   end
   Jeweler::GemcutterTasks.new
