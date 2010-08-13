@@ -594,6 +594,7 @@ p.flash.error:before {
 }
 
 #footer #map #slogan p.terms a {
+  font-size: 11px;
   color: gray;
 }
 
