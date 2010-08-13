@@ -593,6 +593,10 @@ p.flash.error:before {
   color: silver;
 }
 
+#footer #map #slogan p.terms a {
+  color: gray;
+}
+
 #footer #map #middleware, #footer #map #applications {
   margin: 25px 30px 0 0;
   float: left;
