@@ -17,7 +17,7 @@ module BrighterPlanetLayout
   VERSION = ::YAML.load ::File.read(::File.join(GEM_ROOT, 'VERSION'))
   TWITTER_RSS = 'http://twitter.com/statuses/user_timeline/15042574.rss'
   BLOG_ATOM = 'http://numbers.brighterplanet.com/atom.xml'
-  FEED_TIMEOUT = 5.seconds
+  FEED_TIMEOUT = 5 # seconds
   
   def self.view_path
     ::File.join GEM_ROOT, 'app', 'views'
