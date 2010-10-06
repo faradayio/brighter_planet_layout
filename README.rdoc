@@ -15,8 +15,8 @@
 * {cm1}[http://github.com/brighterplanet/cm1]
 * {data1}[http://github.com/brighterplanet/data1]
 * {keyring1}[http://github.com/brighterplanet/keyring1]
-* {numbers}[http://github.com/brighterplanet.com/numbers]†
-* {brighterplanet.github.com}[http://github.com/brighterplanet/brighterplanet.github.com]†
+* {numbers}[http://github.com/brighterplanet.com/numbers] †
+* {brighterplanet.github.com}[http://github.com/brighterplanet/brighterplanet.github.com] †
 
 † <i>These sites do not use this gem directly. Run <tt>rake layout:build</tt> to update them to +brighter_planet_layout+ HEAD.</i>
 
