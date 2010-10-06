@@ -2,15 +2,7 @@ require 'fileutils'
 require 'yaml'
 require 'simple-rss'
 require 'open-uri'
-
-# http://ph7spot.com/musings/system-timer
-begin
-  require 'system_timer'
-  BrighterPlanetLayoutTimer = ::SystemTimer
-rescue ::LoadError
-  require 'timeout'
-  BrighterPlanetLayoutTimer = ::Timeout
-end
+require 'timeout'
 
 module BrighterPlanetLayout
   GEM_ROOT = ::File.expand_path ::File.join(::File.dirname(__FILE__), '..')
@@ -80,7 +72,7 @@ module BrighterPlanetLayout
   end
   
   def self.latest_tweet
-    ::BrighterPlanetLayoutTimer.timeout(FEED_TIMEOUT) do
+    ::Timeout.timeout(FEED_TIMEOUT) do
       ::SimpleRSS.parse(open(TWITTER_RSS)).entries.first
     end
   rescue ::OpenURI::HTTPError
@@ -92,7 +84,7 @@ module BrighterPlanetLayout
   end
   
   def self.latest_blog_post
-    ::BrighterPlanetLayoutTimer.timeout(FEED_TIMEOUT) do
+    ::Timeout.timeout(FEED_TIMEOUT) do
       ::SimpleRSS.parse(open(BLOG_ATOM)).entries.first
     end
   rescue ::OpenURI::HTTPError
