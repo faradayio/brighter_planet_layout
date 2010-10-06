@@ -1,5 +1,6 @@
     <div id="elsewhere">
       <% cache "#{__FILE__}/latest_tweet", :ttl => 3.minutes do %>
+        <!-- Cached at <%= Time.now %> -->
         <% tweet = ::BrighterPlanetLayout.latest_tweet -%>
         <% if tweet %>
           <div id="twitter">
@@ -8,13 +9,31 @@
               <span>via <%= link_to '@brighterplanet', 'http://twitter.com/brighterplanet' %></span>
             </p>
           </div>
+        <% else %>
+          <div id="twitter">
+            <p>
+              Check out our <a href="http://twitter.com/brighterplanet">Twitter feed</a>
+              <span>via <a href="http://twitter.com/brighterplanet">@brighterplanet</a></span>
+            </p>
+          </div>
         <% end %>
       <% end %>
       <% cache "#{__FILE__}/latest_blog_post", :ttl => 3.minutes do %>
+        <!-- Cached at <%= Time.now %> -->
         <% blog_post = ::BrighterPlanetLayout.latest_blog_post -%>
         <% if blog_post %>
           <div id="blog" class="<%= blog_post.author.downcase.dasherize %>">
-            <p><%= link_to blog_post.title, blog_post.link %> <span>by <%= blog_post.author %> <%= time_ago_in_words blog_post.updated %> ago on <%= link_to 'Safety in Numbers', 'http://numbers.brighterplanet.com' %>, our blog</span></p>
+            <p>
+              <%= link_to blog_post.title, blog_post.link %>
+              <span>by <%= blog_post.author %> <%= time_ago_in_words blog_post.updated %> ago on <%= link_to 'Safety in Numbers', 'http://numbers.brighterplanet.com' %>, our blog</span>
+            </p>
+          </div>
+        <% else %>
+          <div id="blog" class="andy">
+            <p>
+              Check out our <a href="http://numbers.brighterplanet.com">the latest posts</a>
+              <span>by Andy on <a href="http://numbers.brighterplanet.com">Safety in Numbers</a>, our blog</span>
+            </p>
           </div>
         <% end %>
       <% end %>
