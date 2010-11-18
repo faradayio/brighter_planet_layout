@@ -744,13 +744,13 @@ p.flash.error:before {
   background-repeat: no-repeat;
   background-position: 100% 100%;
 }
-#footer #map #elsewhere #blog.derek { background-image: url(http://numbers.brighterplanet.com/stylesheets/images/derek.jpg); }
-#footer #map #elsewhere #blog.andy { background-image: url(http://numbers.brighterplanet.com/stylesheets/images/andy.jpg); }
-#footer #map #elsewhere #blog.ian { background-image: url(http://numbers.brighterplanet.com/stylesheets/images/ian.jpg); }
-#footer #map #elsewhere #blog.matt { background-image: url(http://numbers.brighterplanet.com/stylesheets/images/matt.jpg); }
-#footer #map #elsewhere #blog.patti { background-image: url(http://numbers.brighterplanet.com/stylesheets/images/patti.jpg); }
-#footer #map #elsewhere #blog.robbie { background-image: url(http://numbers.brighterplanet.com/stylesheets/images/robbie.jpg); }
-#footer #map #elsewhere #blog.seamus { background-image: url(http://numbers.brighterplanet.com/stylesheets/images/seamus.jpg); }
+#footer #map #elsewhere #blog.derek { background-image: url(images/derek.jpg); }
+#footer #map #elsewhere #blog.andy { background-image: url(images/andy.jpg); }
+#footer #map #elsewhere #blog.ian { background-image: url(images/ian.jpg); }
+#footer #map #elsewhere #blog.matt { background-image: url(images/matt.jpg); }
+#footer #map #elsewhere #blog.patti { background-image: url(images/patti.jpg); }
+#footer #map #elsewhere #blog.robbie { background-image: url(images/robbie.jpg); }
+#footer #map #elsewhere #blog.seamus { background-image: url(images/seamus.jpg); }
 
 #footer #map #elsewhere>div p {
   background: #222;
