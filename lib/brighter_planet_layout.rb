@@ -13,10 +13,6 @@ module BrighterPlanetLayout
   CDN = 'do1ircpq72156.cloudfront.net'
   S3_BUCKET = 'brighterplanetlayout'
     
-  def self.cdn_path
-    ::File.join GEM_ROOT, 'cdn'
-  end
-  
   def self.view_path
     ::File.join GEM_ROOT, 'app', 'views'
   end
@@ -55,11 +51,15 @@ module BrighterPlanetLayout
   end
   
   def self.copy_static_files?
-    not heroku? and not layout_warning_installed?
+    not heroku? and not serve_static_files_using_rack? and not layout_warning_installed?
   end
   
   def self.heroku?
     ::File.readable? '/home/heroku_rack/heroku.ru'
+  end
+  
+  def self.serve_static_files_using_rack?
+    not ::Rails.env.production? and not heroku?
   end
   
   def self.application_name
@@ -104,16 +104,46 @@ module BrighterPlanetLayout
   end
   
   # sabshere 11/17/10 not worth it --cache-control=\"public, max-age=7776000\"
-  # sabshere 11/17/10 don't --delete
   def self.update_s3
     # ENV['AWS_ACCESS_KEY_ID'] = 
     # ENV['AWS_SECRET_ACCESS_KEY'] = 
     # ENV['AWS_ACCESS_KEY_ID'] = 
     # ENV['AWS_SECRET_ACCESS_KEY'] = 
     ENV['S3SYNC_NATIVE_CHARSET'] = 'UTF-8'
-    cmd = "ruby #{ENV['S3SYNC_DIR']}/s3sync.rb -v -r --ssl --public-read #{cdn_path}/ #{S3_BUCKET}:#{VERSION}/"
+    cmd = "ruby #{ENV['S3SYNC_DIR']}/s3sync.rb --exclude=\"ai\" -v -r --ssl --public-read #{public_path}/ #{S3_BUCKET}:#{VERSION}/"
     `#{cmd}`
   end
+  
+  # sabshere 11/18/10 access control header doesn't work
+  # vidalia:~/github/brighter_planet_layout (master) $ ruby ~/bp/propsgod/s3sync/s3cmd.rb -v -s put brighterplanetlayout:0.2.43/stylesheets/fonts/KievitWebPro.woff public/stylesheets/fonts/KievitWebPro.woff x-amz-acl:public-read "Access-Control-Allow-Origin:*"
+  # put to key brighterplanetlayout:0.2.43/stylesheets/fonts/KievitWebPro.woff from public/stylesheets/fonts/KievitWebPro.woff {"Access-Control-Allow-Origin"=>"*", "x-amz-acl"=>"public-read", "Content-Length"=>"61924"}
+  # 
+  # vidalia:~ $ curl -O -v http://brighterplanetlayout.s3.amazonaws.com/0.2.43/stylesheets/fonts/KievitWebPro.woff* About to connect() to brighterplanetlayout.s3.amazonaws.com port 80 (#0)
+  # *   Trying 72.21.207.165...   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+  #                                  Dload  Upload   Total   Spent    Left  Speed
+  #   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0connected
+  # * Connected to brighterplanetlayout.s3.amazonaws.com (72.21.207.165) port 80 (#0)
+  # > GET /0.2.43/stylesheets/fonts/KievitWebPro.woff HTTP/1.1
+  # > User-Agent: curl/7.20.0 (i386-apple-darwin9.8.0) libcurl/7.20.0 OpenSSL/0.9.8m zlib/1.2.3 libidn/1.16
+  # > Host: brighterplanetlayout.s3.amazonaws.com
+  # > Accept: */*
+  # > 
+  # < HTTP/1.1 200 OK
+  # < x-amz-id-2: lVNwntUjGX/0UxlygqXa+8yR2hFpAV+EZAzITK/ZMJQTnTOuJXvHEULNgPr1r9vt
+  # < x-amz-request-id: 2B46C5DEBD6083E3
+  # < Date: Thu, 18 Nov 2010 15:36:14 GMT
+  # < Last-Modified: Thu, 18 Nov 2010 15:33:11 GMT
+  # < ETag: "83c664104e2127f1b8519b653adc98dd"
+  # < Accept-Ranges: bytes
+  # < Content-Type: 
+  # < Content-Length: 61924
+  # < Server: AmazonS3
+  # < 
+  # { [data not shown]
+  # 100 61924  100 61924    0     0   138k      0 --:--:-- --:--:-- --:--:--  216k* Connection #0 to host brighterplanetlayout.s3.amazonaws.com left intact
+  # 
+  # * Closing connection #0
+  # vidalia:~ $ 
 end
 
 if defined? ::Rails::Railtie and ::Rails::VERSION::MAJOR == 3
