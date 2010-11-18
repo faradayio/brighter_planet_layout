@@ -12,16 +12,12 @@
   <% end %>
   <!-- END brighter_planet_layout stylesheets -->
   <!-- START brighter_planet_layout javascripts -->
-  <%= javascript_include_tag brighter_planet_layout_cdn_url("/javascripts/prototype.js") %>
+  <%= javascript_include_tag brighter_planet_layout_cdn_url("/javascripts/prototype.rails-#{Rails::VERSION::STRING}.js") %>
   <%= javascript_include_tag brighter_planet_layout_cdn_url("/javascripts/effects.js") %>
   <%= javascript_include_tag brighter_planet_layout_cdn_url("/javascripts/dragdrop.js") %>
   <%= javascript_include_tag brighter_planet_layout_cdn_url("/javascripts/controls.js") %>
   <% if ::Rails::VERSION::MAJOR == 3 %>
-    <%= javascript_include_tag brighter_planet_layout_cdn_url("/javascripts/rails.js") %>
-  <% end %>
-  <% if File.exist? File.join(::BrighterPlanetLayout.rails_root, 'public', 'javascripts', 'slider.js') %>
-    <!-- required by scriptaculous_slider -->
-    <%= javascript_include_tag "slider" %>
+    <%= javascript_include_tag brighter_planet_layout_cdn_url("/javascripts/rails.rails-#{Rails::VERSION::STRING}.js") %>
   <% end %>
   <% if File.exist? File.join(::BrighterPlanetLayout.rails_root, 'public', 'javascripts', 'application.js') %>
     <%= javascript_include_tag "application" %>

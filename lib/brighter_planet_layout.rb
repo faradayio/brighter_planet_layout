@@ -104,13 +104,14 @@ module BrighterPlanetLayout
   end
   
   # sabshere 11/17/10 not worth it --cache-control=\"public, max-age=7776000\"
+  # sabshere 11/17/10 don't --delete
   def self.update_s3
-    # ENV['S3SYNC_DIR'] = 
-    # ENV['SSL_CERT_DIR'] = 
+    # ENV['AWS_ACCESS_KEY_ID'] = 
+    # ENV['AWS_SECRET_ACCESS_KEY'] = 
     # ENV['AWS_ACCESS_KEY_ID'] = 
     # ENV['AWS_SECRET_ACCESS_KEY'] = 
     ENV['S3SYNC_NATIVE_CHARSET'] = 'UTF-8'
-    cmd = "ruby #{ENV['S3SYNC_DIR']}/s3sync.rb --delete -v -r --ssl --public-read #{cdn_path}/ #{S3_BUCKET}:#{VERSION}/"
+    cmd = "ruby #{ENV['S3SYNC_DIR']}/s3sync.rb -v -r --ssl --public-read #{cdn_path}/ #{S3_BUCKET}:#{VERSION}/"
     `#{cmd}`
   end
 end
