@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{brighter_planet_layout}
-  s.version = "0.2.43"
+  s.version = "0.2.44"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Andy Rossmeissl", "Seamus Abshere"]
@@ -33,8 +33,11 @@ Gem::Specification.new do |s|
      "cdn/javascripts/controls.js",
      "cdn/javascripts/dragdrop.js",
      "cdn/javascripts/effects.js",
-     "cdn/javascripts/prototype.js",
-     "cdn/javascripts/rails.js",
+     "cdn/javascripts/prototype.rails-2.3.10.js",
+     "cdn/javascripts/prototype.rails-3.0.1.js",
+     "cdn/javascripts/prototype.rails-3.0.3.js",
+     "cdn/javascripts/rails.rails-3.0.1.js",
+     "cdn/javascripts/rails.rails-3.0.3.js",
      "cdn/stylesheets/brighter_planet.css",
      "cdn/stylesheets/fonts/DejaVuSansMono-Oblique.eot",
      "cdn/stylesheets/fonts/DejaVuSansMono-Oblique.ttf",
