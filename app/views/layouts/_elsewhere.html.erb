@@ -1,5 +1,5 @@
     <div id="elsewhere">
-      <% cache "#{__FILE__}/latest_tweet", :ttl => 3.minutes do %>
+      <% cache "#{__FILE__}/latest_tweet", :ttl => 43.minutes do %>
         <!-- Cached at <%= Time.now %> -->
         <% tweet = ::BrighterPlanetLayout.latest_tweet -%>
         <% if tweet %>
@@ -18,7 +18,7 @@
           </div>
         <% end %>
       <% end %>
-      <% cache "#{__FILE__}/latest_blog_post", :ttl => 3.minutes do %>
+      <% cache "#{__FILE__}/latest_blog_post", :ttl => 47.minutes do %>
         <!-- Cached at <%= Time.now %> -->
         <% blog_post = ::BrighterPlanetLayout.latest_blog_post -%>
         <% if blog_post %>
