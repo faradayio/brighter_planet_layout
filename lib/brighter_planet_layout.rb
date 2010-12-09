@@ -9,7 +9,7 @@ module BrighterPlanetLayout
   VERSION = ::YAML.load ::File.read(::File.join(GEM_ROOT, 'VERSION'))
   TWITTER_RSS = 'http://twitter.com/statuses/user_timeline/15042574.rss'
   BLOG_ATOM = 'http://numbers.brighterplanet.com/atom.xml'
-  FEED_TIMEOUT = 5 # seconds
+  TIMEOUT = 5 # seconds
   CDN = 'do1ircpq72156.cloudfront.net'
   S3_BUCKET = 'brighterplanetlayout'
     
@@ -75,9 +75,7 @@ module BrighterPlanetLayout
   end
   
   def self.latest_tweet
-    ::Timeout.timeout(FEED_TIMEOUT) do
-      ::SimpleRSS.parse(get(TWITTER_RSS)).entries.first
-    end
+    ::SimpleRSS.parse(get(TWITTER_RSS)).entries.first
   rescue ::SocketError, ::Timeout::Error, ::Errno::ETIMEDOUT, ::Errno::ENETUNREACH, ::Errno::ECONNRESET, ::Errno::ECONNREFUSED
     # nil
   rescue ::NoMethodError
@@ -85,20 +83,24 @@ module BrighterPlanetLayout
   end
   
   def self.latest_blog_post
-    ::Timeout.timeout(FEED_TIMEOUT) do
-      ::SimpleRSS.parse(get(BLOG_ATOM)).entries.first
-    end
+    ::SimpleRSS.parse(get(BLOG_ATOM)).entries.first
   rescue ::SocketError, ::Timeout::Error, ::Errno::ETIMEDOUT, ::Errno::ENETUNREACH, ::Errno::ECONNRESET, ::Errno::ECONNREFUSED
     # nil
   rescue ::NoMethodError
     # nil
   end
   
+  def self.timer
+    defined?(::SystemTimer) ? ::SystemTimer : ::Timeout
+  end
+  
   # sabshere 11/17/10 thanks dkastner
   def self.get(url)
     uri = ::URI.parse url
-    response = ::Net::HTTP.start(uri.host, uri.port) do |http|
-      http.get [uri.path, uri.query].compact.join('?')
+    response = timer.timeout(TIMEOUT) do
+      ::Net::HTTP.start(uri.host, uri.port) do |http|
+        http.get [uri.path, uri.query].compact.join('?')
+      end
     end
     response.body
   end
