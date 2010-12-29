@@ -1,7 +1,13 @@
+/* Fixed-width hints */
+#header, #footer { max-width: 990px; }
+#title { max-width: 975px; }
+#content { max-width: 960px; }
+/* end fixed-width hints */
+
 body {
   margin: 0;
   font-size: 13px;
-  background: #111;
+  background: #ccc url(images/glow.png) repeat-y 990px 0;
 }
 
 body, input, select, button {
@@ -435,6 +441,10 @@ p.flash:before {
 p.flash.error:before {
   content: "⚠";
   color: #F16262;
+}
+
+#footer {
+  background: #111;
 }
 
 #footer #shortcuts {
