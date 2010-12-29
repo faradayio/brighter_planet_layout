@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Andy Rossmeissl", "Seamus Abshere"]
-  s.date = %q{2010-12-10}
+  s.date = %q{2010-12-29}
   s.description = %q{Layouts, partials, stylesheets, and images}
   s.email = %q{andy@rossmeissl.net}
   s.extra_rdoc_files = [
@@ -76,6 +76,7 @@ Gem::Specification.new do |s|
      "public/stylesheets/images/cards.png",
      "public/stylesheets/images/derek.jpg",
      "public/stylesheets/images/gears.png",
+     "public/stylesheets/images/glow.png",
      "public/stylesheets/images/ian.jpg",
      "public/stylesheets/images/logo.png",
      "public/stylesheets/images/matt.jpg",

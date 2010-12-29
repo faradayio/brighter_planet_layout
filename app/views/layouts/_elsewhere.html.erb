@@ -24,8 +24,9 @@
         <% if blog_post %>
           <div id="blog" class="<%= blog_post.author.downcase.dasherize %>">
             <p>
+              <span><%= blog_post.author %> posted</span>
               <%= link_to blog_post.title, blog_post.link %>
-              <span>by <%= blog_post.author %> <%= time_ago_in_words blog_post.updated %> ago on <%= link_to 'Safety in Numbers', 'http://numbers.brighterplanet.com' %>, our blog</span>
+              <span><%= time_ago_in_words blog_post.updated %> ago on <%= link_to 'Safety in Numbers', 'http://numbers.brighterplanet.com' %>, our blog</span>
             </p>
           </div>
         <% else %>

@@ -526,8 +526,8 @@ p.flash.error:before {
 }
 
 #footer #map #slogan {
-  margin: 25px 10px 0 13px;
-  width: 147px;
+  margin: 25px 15px 0 13px;
+  width: 142px;
   float: left;
 }
 
@@ -551,19 +551,9 @@ p.flash.error:before {
   color: silver;
 }
 
-#footer #map #slogan p.terms a {
-  font-size: 11px;
-  color: gray;
-}
-
-#footer #map #middleware, #footer #map #applications {
-  margin: 25px 30px 0 0;
+#footer #map #applications {
   float: left;
   width: 225px;
-}
-
-#footer #map #middleware {
-  font-size: 11px;
 }
 
 #footer #map h3 {
@@ -571,55 +561,6 @@ p.flash.error:before {
   text-transform: uppercase;
   font-weight: normal;
   font-size: 11px;
-}
-
-#footer #map #middleware p {
-  color: gray;
-}
-
-#footer #map #middleware p a {
-  color: #999;
-}
-
-#footer #map #middleware ul.links {
-  list-style: none;
-  border-top: 1px solid #222;
-  padding: 10px 0 0;
-}
-
-#footer #map #middleware ul.links li {
-  margin: 0 0 7px;
-  color: #444;
-}
-
-#footer #map #middleware ul.links li:before {
-  content: "▶";
-  display: block;
-  float: left;
-  width: 1em;
-  background: #555;
-  color: #222;
-  padding: 0 0 1px 2px;
-  line-height: 14px;
-  margin: 0 5px 0 0;
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
-  text-shadow: none;
-  font-size: 13px;
-  -moz-box-shadow: black 1px 1px 0;
-}
-
-#footer #map #middleware ul.links li a {
-  color: gray;
-  display: block;
-}
-
-#footer #map #middleware .main {
-  padding: 0 0 10px 80px;
-  background: url(images/gears.png) no-repeat;
-  min-height: 47px;
-  border-bottom: 1px solid black;
 }
 
 #footer #map #applications {
@@ -662,19 +603,13 @@ p.flash.error:before {
   background: url(images/cards.png) no-repeat 50% 4px;
 }
 
-#footer #map #applications ul li.profiler {
-  font-size: 11px;
-  padding-left: 50px;
-  background: url(images/meter.png) no-repeat 10px 60%;
-}
-
 #footer #map #applications ul li a {
   color: silver;
 }
 
 #footer #map #elsewhere {
   float: left;
-  width: 300px;
+  width: 545px;
   margin: 25px 0 0;
   color: silver;
 }
