@@ -2,12 +2,15 @@
 #header, #footer { max-width: 990px; }
 #title { max-width: 975px; }
 #content { max-width: 960px; }
+#header, #title, #content, #footer {
+  margin: 0 auto;
+}
 /* end fixed-width hints */
 
 body {
   margin: 0;
   font-size: 13px;
-  background: #ccc url(images/glow.png) repeat-y 990px 0;
+  background: #ccc url(images/glow.png) repeat-y 50% 0;
 }
 
 body, input, select, button {
@@ -47,6 +50,7 @@ a img {
 }
 
 #header {
+  position: relative;
   background-image:
     -webkit-gradient(
       linear,
@@ -73,7 +77,7 @@ a img {
   float: left;
   width: 129px;
   margin: 13px;
-  background: url(images/logo.png) no-repeat
+  background: url(images/logo.png) no-repeat;
 }
 
 #header h1 span {
@@ -115,6 +119,26 @@ a img {
 
 #header ul li a:hover {
   background: rgba(0,0,0,0.1);
+}
+
+#header p {
+  position: absolute;
+  right: 15px;
+  top: 0;
+  width: 200px;
+  line-height: 58px;
+  color: #aaa;
+  text-align: right;
+}
+
+#header p a {
+  color: inherit;
+  font-size: 12px;
+  text-shadow: -1px -1px 0 black;
+}
+
+#header p a:hover {
+  color: silver;
 }
 
 #nav {
@@ -464,6 +488,7 @@ p.flash.error:before {
     );
   overflow: auto;
   font-size: 11px;
+  min-height: 15px;
 }
 
 #footer #shortcuts h3 {
@@ -474,16 +499,19 @@ p.flash.error:before {
   text-shadow: -1px -1px 0px black;
   padding: 1px 0 0;
   font-size: 12px;
+  display: none;
 }
 
 #footer #shortcuts h3:after {
   content: " →";
+  display: none;
 }
 
 #footer #shortcuts ul {
   list-style: none;
   overflow: auto;
   margin: 0 0 0 165px;
+  display: none;
 }
 
 #footer #shortcuts ul li {
