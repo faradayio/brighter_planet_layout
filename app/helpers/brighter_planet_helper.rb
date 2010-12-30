@@ -22,7 +22,7 @@ module BrighterPlanetHelper
   end
   
   def brighter_planet_layout_cdn_url(path)
-    if ::Rails.env.production?
+    if false and ::Rails.env.production?
       [ request.protocol, ::BrighterPlanetLayout::CDN, "/#{::BrighterPlanetLayout::VERSION}", path ].join
     else
       path
