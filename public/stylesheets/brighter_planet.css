@@ -282,6 +282,7 @@ a img {
 
 #content {
   padding: 15px 15px 50px;
+  position: relative;
 }
 
 #content>p {
