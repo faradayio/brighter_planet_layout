@@ -215,7 +215,7 @@ a img {
   background-color: #5FBBFF;
   background-repeat: no-repeat;
   background-position: 20px 20%;
-  padding: 20px 0 0 165px;
+  padding: 20px 0 0 15px;
   height: 70px;
   border-bottom: 1px solid #0070C4;
   -moz-box-shadow: inset 0 10px 10px rgba(0,0,0,0.1);
@@ -226,6 +226,7 @@ a img {
 #title h1, #title h2 {
   font-size: 18px;
   text-shadow: 1px 1px 0px rgba(255,255,255,0.5);
+  margin: 0 0 0 150px;
 }
 
 #title h1 a {
