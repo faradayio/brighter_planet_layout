@@ -141,6 +141,37 @@ a img {
   color: silver;
 }
 
+
+/* full-width #header fixes */
+
+#header {
+  max-width: none;
+}
+
+#header h1 {
+  display: none;
+}
+
+#header ul {
+  background: url(images/logo.png) no-repeat 10px 50%;
+  margin: 0 auto;
+  width: 825px;
+  padding: 0 0 0 165px;
+}
+
+#header ul li {
+  position: relative;
+  z-index: 10;
+}
+
+#header p {
+  left: 50%;
+  right: auto;
+  width: 495px;
+}
+
+/* end full-width #header fixed */
+
 #nav {
   background-image:
     -webkit-gradient(
