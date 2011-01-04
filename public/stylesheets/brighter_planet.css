@@ -167,7 +167,8 @@ a img {
 #header p {
   left: 50%;
   right: auto;
-  width: 495px;
+  width: 485px;
+  padding: 0 10px 0 0;
 }
 
 /* end full-width #header fixed */
