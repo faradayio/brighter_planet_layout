@@ -109,10 +109,10 @@ module BrighterPlanetLayout
   def self.update_s3
     # ENV['AWS_ACCESS_KEY_ID'] = 
     # ENV['AWS_SECRET_ACCESS_KEY'] = 
-    # ENV['AWS_ACCESS_KEY_ID'] = 
-    # ENV['AWS_SECRET_ACCESS_KEY'] = 
+    # ENV['SSL_CERT_DIR'] = 
+    # ENV['S3SYNC_DIR'] = 
     ::ENV['S3SYNC_NATIVE_CHARSET'] = 'UTF-8'
-    cmd = "ruby #{ENV['S3SYNC_DIR']}/s3sync.rb --exclude=\"\\.ai\" -v -r --ssl --public-read #{public_path}/ #{S3_BUCKET}:#{VERSION}/"
+    cmd = "ruby #{ENV['S3SYNC_DIR']}/s3sync.rb --exclude=\"\\.ai\" --exclude=\"\\.psd\" -v -r --ssl --public-read #{public_path}/ #{S3_BUCKET}:#{VERSION}/"
     `#{cmd}`
   end
   
