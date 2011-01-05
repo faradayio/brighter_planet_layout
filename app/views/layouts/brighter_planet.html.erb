@@ -29,7 +29,7 @@
   <%= render_or_nothing :partial => 'layouts/head' %>
   <%= yield :head %>
 </head>
-<body<%= " class=\"#{ @bodyclass }\"".html_safe if @bodyclass %>>
+<body<%= " class=\"#{ @bodyclass }\"".html_safe if @bodyclass %><%= " id=\"#{ @bodyid }\"".html_safe if @bodyid %>>
 
 <%= render :partial => 'layouts/google_analytics' %>
 
