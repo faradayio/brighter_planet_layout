@@ -73,14 +73,6 @@ a img {
 }
 
 #header h1 {
-  height: 34px;
-  float: left;
-  width: 129px;
-  margin: 13px;
-  background: url(images/logo.png) no-repeat;
-}
-
-#header h1 span {
   display: none;
 }
 
@@ -96,6 +88,10 @@ a img {
   width: 120px;
 }
 
+#header ul li.home {
+  width: 164px;
+}
+
 #header ul li a {
   border-left: 1px solid #555;
   display: block;
@@ -109,6 +105,12 @@ a img {
   padding: 23.5px 0;
 }
 
+#header ul li.home a {
+  background: url(images/logo.png) no-repeat 13px 50%;
+  text-indent: -150px;
+  text-align: left;
+}
+
 #header li:last-child {
   border-right: 1px solid #555;
 }
@@ -118,7 +120,7 @@ a img {
 }
 
 #header ul li a:hover {
-  background: rgba(0,0,0,0.1);
+  background-color: rgba(0,0,0,0.1);
 }
 
 #header p {
@@ -148,15 +150,9 @@ a img {
   max-width: none;
 }
 
-#header h1 {
-  display: none;
-}
-
 #header ul {
-  background: url(images/logo.png) no-repeat 10px 50%;
   margin: 0 auto;
-  width: 825px;
-  padding: 0 0 0 165px;
+  width: 994px;
 }
 
 #header ul li {
