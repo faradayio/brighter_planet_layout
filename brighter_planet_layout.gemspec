@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{brighter_planet_layout}
-  s.version = "0.3.1"
+  s.version = "0.3.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Andy Rossmeissl", "Seamus Abshere"]
-  s.date = %q{2011-01-10}
+  s.date = %q{2011-01-13}
   s.description = %q{Layouts, partials, stylesheets, and images}
   s.email = %q{andy@rossmeissl.net}
   s.extra_rdoc_files = [
