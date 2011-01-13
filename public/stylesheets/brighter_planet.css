@@ -1,8 +1,8 @@
 /* Fixed-width hints */
-#header, #footer { max-width: 990px; }
+#header, #footer, #flash { max-width: 990px; }
 #title { max-width: 975px; }
 #content { max-width: 960px; }
-#header, #title, #content, #footer {
+#header, #title, #content, #footer, #flash {
   margin: 0 auto;
 }
 /* end fixed-width hints */
