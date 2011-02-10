@@ -1,6 +1,7 @@
 require 'fileutils'
 require 'simple-rss'
 require 'eat'
+require 'brighter_planet_layout/version'
 
 module BrighterPlanetLayout
   GEM_ROOT = ::File.expand_path ::File.join(::File.dirname(__FILE__), '..')
