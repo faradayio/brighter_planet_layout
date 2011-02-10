@@ -1,12 +1,9 @@
 require 'fileutils'
-require 'yaml'
 require 'simple-rss'
-require 'timeout'
-require 'net/http'
+require 'eat'
 
 module BrighterPlanetLayout
   GEM_ROOT = ::File.expand_path ::File.join(::File.dirname(__FILE__), '..')
-  VERSION = ::YAML.load ::File.read(::File.join(GEM_ROOT, 'VERSION'))
   TWITTER_RSS = 'http://twitter.com/statuses/user_timeline/15042574.rss'
   BLOG_ATOM = 'http://numbers.brighterplanet.com/latest.xml'
   TIMEOUT = 5 # seconds
@@ -75,7 +72,7 @@ module BrighterPlanetLayout
   end
   
   def self.latest_tweet
-    ::SimpleRSS.parse(get(TWITTER_RSS)).entries.first
+    ::SimpleRSS.parse(eat(TWITTER_RSS)).entries.first
   rescue ::SocketError, ::Timeout::Error, ::Errno::ETIMEDOUT, ::Errno::ENETUNREACH, ::Errno::ECONNRESET, ::Errno::ECONNREFUSED
     # nil
   rescue ::NoMethodError
@@ -83,69 +80,12 @@ module BrighterPlanetLayout
   end
   
   def self.latest_blog_post
-    ::SimpleRSS.parse(get(BLOG_ATOM)).entries.first
+    ::SimpleRSS.parse(eat(BLOG_ATOM)).entries.first
   rescue ::SocketError, ::Timeout::Error, ::Errno::ETIMEDOUT, ::Errno::ENETUNREACH, ::Errno::ECONNRESET, ::Errno::ECONNREFUSED
     # nil
   rescue ::NoMethodError
     # nil
   end
-  
-  def self.timer
-    defined?(::SystemTimer) ? ::SystemTimer : ::Timeout
-  end
-  
-  # sabshere 11/17/10 thanks dkastner
-  def self.get(url)
-    uri = ::URI.parse url
-    response = timer.timeout(TIMEOUT) do
-      ::Net::HTTP.start(uri.host, uri.port) do |http|
-        http.get [uri.path, uri.query].compact.join('?')
-      end
-    end
-    response.body
-  end
-  
-  # sabshere 11/17/10 not worth it --cache-control=\"public, max-age=7776000\"
-  def self.update_s3
-    # ENV['AWS_ACCESS_KEY_ID'] = 
-    # ENV['AWS_SECRET_ACCESS_KEY'] = 
-    # ENV['SSL_CERT_DIR'] = 
-    # ENV['S3SYNC_DIR'] = 
-    ::ENV['S3SYNC_NATIVE_CHARSET'] = 'UTF-8'
-    cmd = "ruby #{ENV['S3SYNC_DIR']}/s3sync.rb --exclude=\"\\.ai\" --exclude=\"\\.psd\" -v -r --ssl --public-read #{public_path}/ #{S3_BUCKET}:#{VERSION}/"
-    `#{cmd}`
-  end
-  
-  # sabshere 11/18/10 access control header doesn't work
-  # vidalia:~/github/brighter_planet_layout (master) $ ruby ~/bp/propsgod/s3sync/s3cmd.rb -v -s put brighterplanetlayout:0.2.43/stylesheets/fonts/KievitWebPro.woff public/stylesheets/fonts/KievitWebPro.woff x-amz-acl:public-read "Access-Control-Allow-Origin:*"
-  # put to key brighterplanetlayout:0.2.43/stylesheets/fonts/KievitWebPro.woff from public/stylesheets/fonts/KievitWebPro.woff {"Access-Control-Allow-Origin"=>"*", "x-amz-acl"=>"public-read", "Content-Length"=>"61924"}
-  # 
-  # vidalia:~ $ curl -O -v http://brighterplanetlayout.s3.amazonaws.com/0.2.43/stylesheets/fonts/KievitWebPro.woff* About to connect() to brighterplanetlayout.s3.amazonaws.com port 80 (#0)
-  # *   Trying 72.21.207.165...   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-  #                                  Dload  Upload   Total   Spent    Left  Speed
-  #   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0connected
-  # * Connected to brighterplanetlayout.s3.amazonaws.com (72.21.207.165) port 80 (#0)
-  # > GET /0.2.43/stylesheets/fonts/KievitWebPro.woff HTTP/1.1
-  # > User-Agent: curl/7.20.0 (i386-apple-darwin9.8.0) libcurl/7.20.0 OpenSSL/0.9.8m zlib/1.2.3 libidn/1.16
-  # > Host: brighterplanetlayout.s3.amazonaws.com
-  # > Accept: */*
-  # > 
-  # < HTTP/1.1 200 OK
-  # < x-amz-id-2: lVNwntUjGX/0UxlygqXa+8yR2hFpAV+EZAzITK/ZMJQTnTOuJXvHEULNgPr1r9vt
-  # < x-amz-request-id: 2B46C5DEBD6083E3
-  # < Date: Thu, 18 Nov 2010 15:36:14 GMT
-  # < Last-Modified: Thu, 18 Nov 2010 15:33:11 GMT
-  # < ETag: "83c664104e2127f1b8519b653adc98dd"
-  # < Accept-Ranges: bytes
-  # < Content-Type: 
-  # < Content-Length: 61924
-  # < Server: AmazonS3
-  # < 
-  # { [data not shown]
-  # 100 61924  100 61924    0     0   138k      0 --:--:-- --:--:-- --:--:--  216k* Connection #0 to host brighterplanetlayout.s3.amazonaws.com left intact
-  # 
-  # * Closing connection #0
-  # vidalia:~ $ 
 end
 
 if defined? ::Rails::Railtie and ::Rails::VERSION::MAJOR == 3
