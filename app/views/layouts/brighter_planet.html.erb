@@ -8,10 +8,6 @@
   <%= stylesheet_link_tag 'fonts' %>
   <%= stylesheet_link_tag brighter_planet_layout_cdn_url("/stylesheets/brighter_planet.css") %>
   <%= stylesheet_link_tag brighter_planet_layout_cdn_url("/stylesheets/idle.css") %>
-  <!--[if IE]>
-  <%= stylesheet_link_tag 'brighter_planet' %>
-  <%= stylesheet_link_tag 'idle.css' %>
-  <![endif]-->
   <% if File.exist? File.join(::BrighterPlanetLayout.rails_root, 'public', 'stylesheets', 'application.css') %>
     <%= stylesheet_link_tag "application" %>
   <% end %>
