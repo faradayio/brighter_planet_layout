@@ -8,7 +8,7 @@ module BrighterPlanetLayout
   TWITTER_RSS = 'http://twitter.com/statuses/user_timeline/15042574.rss'
   BLOG_ATOM = 'http://numbers.brighterplanet.com/latest.xml'
   TIMEOUT = 5 # seconds
-  CDN = 'do1ircpq72156.cloudfront.net'
+  CDN = 'layout.brighterplanet.com'
   S3_BUCKET = 'brighterplanetlayout'
     
   def self.view_path
