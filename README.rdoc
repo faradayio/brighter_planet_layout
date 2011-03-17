@@ -20,6 +20,147 @@
 
 † <i>These sites do not use this gem directly. Run <tt>rake layout:build</tt> to update them to +brighter_planet_layout+ HEAD.</i>
 
+== Updating S3/Cloudfront
+
+    vidalia:~/github/brighter_planet_layout (master) $ eval `./secret.sh`
+    vidalia:~/github/brighter_planet_layout (master) $ rake update_s3
+    (in /Users/seamus/github/brighter_planet_layout)
+    Dry run... set REAL=true if you want to update for real
+    ruby /Users/seamus/bp/propsgod/s3sync//s3sync.rb --dryrun --exclude="\.psd|\.ai" -v -r --ssl --public-read /Users/seamus/github/brighter_planet_layout/public/ brighterplanetlayout:0.3.7/
+    Create node 401.html
+    Create node 403.html
+    Create node 403.xml
+    Create node 404.html
+    Create node 404.json
+    Create node 404.xml
+    Create node 409.html
+    Create node 422.html
+    Create node 500.html
+    Create node favicon.ico
+    Create node javascripts
+    Create node javascripts/controls.js
+    Create node javascripts/dragdrop.js
+    Create node javascripts/effects.js
+    Create node javascripts/prototype.rails-2.3.10.js
+    Create node javascripts/prototype.rails-3.0.1.js
+    Create node javascripts/prototype.rails-3.0.3.js
+    Create node javascripts/prototype.rails-3.0.4.js
+    Create node javascripts/prototype.rails-3.0.5.js
+    Create node javascripts/rails.rails-3.0.1.js
+    Create node javascripts/rails.rails-3.0.3.js
+    Create node javascripts/rails.rails-3.0.4.js
+    Create node javascripts/rails.rails-3.0.5.js
+    Create node maintenance.html
+    Create node stylesheets
+    Create node stylesheets/brighter_planet.css
+    Create node stylesheets/fonts
+    Create node stylesheets/fonts.css
+    Create node stylesheets/fonts/DejaVuSansMono-Oblique.eot
+    Create node stylesheets/fonts/DejaVuSansMono-Oblique.ttf
+    Create node stylesheets/fonts/DejaVuSansMono.eot
+    Create node stylesheets/fonts/DejaVuSansMono.ttf
+    Create node stylesheets/fonts/KievitOT-Bold.otf
+    Create node stylesheets/fonts/KievitOT-BoldItalic.otf
+    Create node stylesheets/fonts/KievitOT-Italic.otf
+    Create node stylesheets/fonts/KievitOT-Regular.otf
+    Create node stylesheets/fonts/KievitWebPro-Bold.eot
+    Create node stylesheets/fonts/KievitWebPro-Bold.woff
+    Create node stylesheets/fonts/KievitWebPro-BoldIta.eot
+    Create node stylesheets/fonts/KievitWebPro-BoldIta.woff
+    Create node stylesheets/fonts/KievitWebPro-Ita.eot
+    Create node stylesheets/fonts/KievitWebPro-Ita.woff
+    Create node stylesheets/fonts/KievitWebPro.eot
+    Create node stylesheets/fonts/KievitWebPro.woff
+    Create node stylesheets/idle.css
+    Create node stylesheets/images
+    Create node stylesheets/images/andy.jpg
+    Create node stylesheets/images/bg.png
+    Create node stylesheets/images/cards.png
+    Create node stylesheets/images/derek.jpg
+    Create node stylesheets/images/gears-small.png
+    Create node stylesheets/images/gears.png
+    Create node stylesheets/images/glow.png
+    Create node stylesheets/images/ian.jpg
+    Create node stylesheets/images/logo.png
+    Create node stylesheets/images/matt.jpg
+    Create node stylesheets/images/meter.png
+    Create node stylesheets/images/patti.jpg
+    Create node stylesheets/images/prism.png
+    Create node stylesheets/images/radiant_earth-small.png
+    Create node stylesheets/images/radiant_earth-smaller.png
+    Create node stylesheets/images/robbie.jpg
+    Create node stylesheets/images/seamus.jpg
+    Done
+    vidalia:~/github/brighter_planet_layout (master) $ rake update_s3 REAL=true
+    (in /Users/seamus/github/brighter_planet_layout)
+    Really updating
+    ruby /Users/seamus/bp/propsgod/s3sync//s3sync.rb --exclude="\.psd|\.ai" -v -r --ssl --public-read /Users/seamus/github/brighter_planet_layout/public/ brighterplanetlayout:0.3.7/
+    Create node 401.html
+    Create node 403.html
+    Create node 403.xml
+    Create node 404.html
+    Create node 404.json
+    Create node 404.xml
+    Create node 409.html
+    Create node 422.html
+    Create node 500.html
+    Create node favicon.ico
+    Create node javascripts
+    Create node javascripts/controls.js
+    Create node javascripts/dragdrop.js
+    Create node javascripts/effects.js
+    Create node javascripts/prototype.rails-2.3.10.js
+    Create node javascripts/prototype.rails-3.0.1.js
+    Create node javascripts/prototype.rails-3.0.3.js
+    Create node javascripts/prototype.rails-3.0.4.js
+    Create node javascripts/prototype.rails-3.0.5.js
+    Create node javascripts/rails.rails-3.0.1.js
+    Create node javascripts/rails.rails-3.0.3.js
+    Create node javascripts/rails.rails-3.0.4.js
+    Create node javascripts/rails.rails-3.0.5.js
+    Create node maintenance.html
+    Create node stylesheets
+    Create node stylesheets/brighter_planet.css
+    Create node stylesheets/fonts
+    Create node stylesheets/fonts.css
+    Create node stylesheets/fonts/DejaVuSansMono-Oblique.eot
+    Create node stylesheets/fonts/DejaVuSansMono-Oblique.ttf
+    Create node stylesheets/fonts/DejaVuSansMono.eot
+    Create node stylesheets/fonts/DejaVuSansMono.ttf
+    Create node stylesheets/fonts/KievitOT-Bold.otf
+    Create node stylesheets/fonts/KievitOT-BoldItalic.otf
+    Create node stylesheets/fonts/KievitOT-Italic.otf
+    Create node stylesheets/fonts/KievitOT-Regular.otf
+    Create node stylesheets/fonts/KievitWebPro-Bold.eot
+    Create node stylesheets/fonts/KievitWebPro-Bold.woff
+    Create node stylesheets/fonts/KievitWebPro-BoldIta.eot
+    Create node stylesheets/fonts/KievitWebPro-BoldIta.woff
+    Create node stylesheets/fonts/KievitWebPro-Ita.eot
+    Create node stylesheets/fonts/KievitWebPro-Ita.woff
+    Create node stylesheets/fonts/KievitWebPro.eot
+    Create node stylesheets/fonts/KievitWebPro.woff
+    Create node stylesheets/idle.css
+    Create node stylesheets/images
+    Create node stylesheets/images/andy.jpg
+    Create node stylesheets/images/bg.png
+    Create node stylesheets/images/cards.png
+    Create node stylesheets/images/derek.jpg
+    Create node stylesheets/images/gears-small.png
+    Create node stylesheets/images/gears.png
+    Create node stylesheets/images/glow.png
+    Create node stylesheets/images/ian.jpg
+    Create node stylesheets/images/logo.png
+    Create node stylesheets/images/matt.jpg
+    Create node stylesheets/images/meter.png
+    Create node stylesheets/images/patti.jpg
+    Create node stylesheets/images/prism.png
+    Create node stylesheets/images/radiant_earth-small.png
+    Create node stylesheets/images/radiant_earth-smaller.png
+    Create node stylesheets/images/robbie.jpg
+    Create node stylesheets/images/seamus.jpg
+    Done
+
+
 == Copyright
 
 Copyright (c) 2010 Andy Rossmeissl.
