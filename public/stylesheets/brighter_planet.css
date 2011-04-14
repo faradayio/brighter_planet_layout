@@ -501,7 +501,7 @@ p.flash.error:before {
   background: #111;
 }
 
-#footer #shortcuts {
+#footer #divider {
   background-image:
     -webkit-gradient(
       linear,
@@ -519,59 +519,6 @@ p.flash.error:before {
   overflow: auto;
   font-size: 11px;
   min-height: 15px;
-}
-
-#footer #shortcuts h3 {
-  float: left;
-  width: 150px;
-  text-align: right;
-  color: silver;
-  text-shadow: -1px -1px 0px black;
-  padding: 1px 0 0;
-  font-size: 12px;
-  display: none;
-}
-
-#footer #shortcuts h3:after {
-  content: " →";
-  display: none;
-}
-
-#footer #shortcuts ul {
-  list-style: none;
-  overflow: auto;
-  margin: 0 0 0 165px;
-  display: none;
-}
-
-#footer #shortcuts ul li {
-  border-left: 1px solid black;
-  float: left;
-  width: 80px;
-}
-
-#footer #shortcuts ul li a {
-  border-left: 1px solid #555;
-  display: block;
-  text-align: center;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: silver;
-  line-height: 1;
-  text-shadow: -1px -1px 0px black;
-  padding: 5px 0;
-}
-
-#footer #shortcuts li:last-child {
-  border-right: 1px solid #555;
-}
-
-#footer #shortcuts li:last-child a {
-  border-right: 1px solid black;
-}
-
-#footer #shortcuts ul li a:hover {
-  background: rgba(0,0,0,0.1);
 }
 
 #footer #map {
@@ -599,131 +546,21 @@ p.flash.error:before {
   color: silver;
 }
 
-#footer #map #slogan p.description {
+#footer #map p.description, #footer #map #links p {
   font-size: 11px;
   color: gray;
   margin: 5px 0 0;
 }
 
-#footer #map #slogan p.description a {
-  color: silver;
-}
-
-#footer #map #applications {
-  float: left;
-  width: 225px;
-}
-
-#footer #map h3 {
-  color: silver;
-  text-transform: uppercase;
-  font-weight: normal;
-  font-size: 11px;
-}
-
-#footer #map #applications {
-  margin: 25px 20px 0 0;
-}
-
-#footer #map #applications h3 {
-  display: none;
-}
-
-#footer #map #applications ul {
-  background: #080808;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
-  -moz-box-shadow: -1px -1px 0 black;
-  -webkit-box-shadow: -1px -1px 0 black;
-  box-shadow: -1px -1px 0 black;
-  list-style: none;
-}
-
-#footer #map #applications ul li {
-  padding: 10px;
-  border-bottom: 1px solid #111;
-  border-top: 1px solid black;
-  color: gray;
-}
-
-#footer #map #applications ul li:first-child {
-  border-top: none;
-}
-
-#footer #map #applications ul li:last-child {
-  border-bottom: none;
-}
-
-#footer #map #applications ul li.cards {
-  padding-top: 70px;
-  text-align: center;
-  background: url(images/cards.png) no-repeat 50% 4px;
-}
-
-#footer #map #applications ul li a {
-  color: silver;
-}
-
-#footer #map #elsewhere {
-  float: left;
-  width: 545px;
+#footer #links {
   margin: 25px 0 0;
-  color: silver;
 }
 
-#footer #map #elsewhere>div {
-  position: relative;
+#footer #map #links p {
+  font-size: 14px;
 }
 
-#footer #map #elsewhere>div:after {
-  content: "◣";
-  position: absolute;
-  bottom: 8px;
-  right: 0;
-  width: 50px;
-  color: #222;
-  font-size: 18px;
-}
-
-#footer #map #elsewhere #twitter {
-  background: url(images/radiant_earth-small.png) no-repeat 100% 100%;
-  margin: 0 0 25px;
-}
-
-#footer #map #elsewhere #blog {
-  background-repeat: no-repeat;
-  background-position: 100% 100%;
-}
-#footer #map #elsewhere #blog.derek { background-image: url(images/derek.jpg); }
-#footer #map #elsewhere #blog.andy { background-image: url(images/andy.jpg); }
-#footer #map #elsewhere #blog.ian { background-image: url(images/ian.jpg); }
-#footer #map #elsewhere #blog.matt { background-image: url(images/matt.jpg); }
-#footer #map #elsewhere #blog.patti { background-image: url(images/patti.jpg); }
-#footer #map #elsewhere #blog.robbie { background-image: url(images/robbie.jpg); }
-#footer #map #elsewhere #blog.seamus { background-image: url(images/seamus.jpg); }
-
-#footer #map #elsewhere>div p {
-  background: #222;
-  -moz-box-shadow: -1px -1px 0 black;
-  -webkit-box-shadow: -1px -1px 0 black;
-  box-shadow: -1px -1px 0 black;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
-  text-shadow: 1px 1px 0 black;
-}
-
-#footer #map #elsewhere p {
-  padding: 10px;
-  margin: 0 48px 0 0;
-}
-
-#footer #map #elsewhere p span {
-  color: gray;
-}
-
-#footer #map #elsewhere p a {
+#footer #map #links p a {
   color: inherit;
 }
 
