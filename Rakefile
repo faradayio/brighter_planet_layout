@@ -29,7 +29,7 @@ task :update_s3 do
   $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), 'lib'))
   require 'brighter_planet_layout'
   ENV['S3SYNC_NATIVE_CHARSET'] = 'UTF-8'
-  cmd = %{ruby #{ENV['S3SYNC_DIR']}/s3sync.rb #{'--dryrun ' unless ENV['REAL'] == 'true'}--exclude="\\.psd|\\.ai" -v -r --ssl --public-read #{BrighterPlanetLayout.public_path}/ #{BrighterPlanetLayout::S3_BUCKET}:#{BrighterPlanetLayout::VERSION}/}
+  cmd = %{ruby #{ENV['S3SYNC_DIR']}/s3sync.rb #{'--dryrun ' unless ENV['REAL'] == 'true'}--exclude="\\.psd|\\.ai|DejaVu|Kievit|html|xml|json|\\.ico" -v -r --ssl --public-read #{BrighterPlanetLayout.public_path}/ #{BrighterPlanetLayout::S3_BUCKET}:#{BrighterPlanetLayout::VERSION}/}
   if ENV['REAL'] == 'true'
     $stderr.puts "Really updating"
   else
