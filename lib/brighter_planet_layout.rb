@@ -57,7 +57,7 @@ module BrighterPlanet
       ::Dir[::File.join(public_path, '*')].each do |source_path|
         dest_path = ::File.join(rails_root, 'public', source_path.sub(public_path, ''))
         if ::File.directory? source_path
-          ::FileUtils.cp_r "./#{source_path}", dest_path
+          ::FileUtils.cp_r ::File.join(source_path, '.'), dest_path
         else
           ::FileUtils.cp source_path, dest_path
         end
