@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr" id="brighterplanet-com">
 <head>
-  <title><%= title = @title ? "#{@title} [#{::BrighterPlanetLayout.application_name}]" : ::BrighterPlanetLayout.application_name %></title>
+  <title><%= title = @title ? "#{@title} [#{::BrighterPlanet.layout.application_name}]" : ::BrighterPlanet.layout.application_name %></title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="Content-Language" content="en" />
   <!-- START brighter_planet_layout stylesheets -->
@@ -12,7 +12,7 @@
   <%= stylesheet_link_tag "/stylesheets/brighter_planet.css" %>
   <%= stylesheet_link_tag "/stylesheets/idle.css" %>
   <![endif]-->
-  <% if File.exist? File.join(::BrighterPlanetLayout.rails_root, 'public', 'stylesheets', 'application.css') %>
+  <% if File.exist? File.join(::BrighterPlanet.layout.rails_root, 'public', 'stylesheets', 'application.css') %>
     <%= stylesheet_link_tag "application" %>
   <% end %>
   <!-- END brighter_planet_layout stylesheets -->
@@ -24,7 +24,7 @@
   <% if ::Rails::VERSION::MAJOR == 3 %>
     <%= javascript_include_tag brighter_planet_layout_cdn_url("/javascripts/rails.rails-#{Rails::VERSION::STRING}.js") %>
   <% end %>
-  <% if File.exist? File.join(::BrighterPlanetLayout.rails_root, 'public', 'javascripts', 'application.js') %>
+  <% if File.exist? File.join(::BrighterPlanet.layout.rails_root, 'public', 'javascripts', 'application.js') %>
     <%= javascript_include_tag "application" %>
   <% end %>
   <!-- END brighter_planet_layout javascripts -->

@@ -19,16 +19,16 @@ module Rails
   end
 end
 
-class TestBrighterPlanetLayout < Test::Unit::TestCase
+class TestBrighterPlanet.layout < Test::Unit::TestCase
   def test_application_name
-    assert_equal 'Foobar', BrighterPlanetLayout.application_name
+    assert_equal 'Foobar', BrighterPlanet.layout.application_name
   end
   
   def test_latest_blog_post
-    assert !BrighterPlanetLayout.latest_blog_post.empty?
+    assert !BrighterPlanet.layout.latest_blog_post.empty?
   end
   
   def test_latest_tweet
-    assert !BrighterPlanetLayout.latest_tweet.empty?
+    assert !BrighterPlanet.layout.latest_tweet.empty?
   end
 end

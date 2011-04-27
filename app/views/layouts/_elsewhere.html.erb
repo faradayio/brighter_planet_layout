@@ -1,7 +1,7 @@
     <div id="elsewhere">
-      <% cache "#{__FILE__}/latest_tweet", :expires_in => 43.minutes do %>
+      <% cache "brighter_planet_layout/latest_tweet", :expires_in => 43.minutes do %>
         <!-- Cached at <%= Time.now %> -->
-        <% tweet = ::BrighterPlanetLayout.latest_tweet -%>
+        <% tweet = ::BrighterPlanet.layout.latest_tweet -%>
         <% if tweet %>
           <div id="twitter">
             <p>
@@ -18,9 +18,9 @@
           </div>
         <% end %>
       <% end %>
-      <% cache "#{__FILE__}/latest_blog_post", :expires_in => 47.minutes do %>
+      <% cache "brighter_planet_layout/latest_blog_post", :expires_in => 47.minutes do %>
         <!-- Cached at <%= Time.now %> -->
-        <% blog_post = ::BrighterPlanetLayout.latest_blog_post -%>
+        <% blog_post = ::BrighterPlanet.layout.latest_blog_post -%>
         <% if blog_post %>
           <div id="blog" class="<%= blog_post.author.downcase.dasherize %>">
             <p>

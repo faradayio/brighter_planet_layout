@@ -1,21 +1,23 @@
-module BrighterPlanetLayout
-  class Railtie < ::Rails::Railtie
-    rake_tasks do
-      load 'brighter_planet_layout/rake_tasks.rb'
-    end
-    initializer 'brighter_planet_layout' do |app|
-      app.paths.app.views.push ::BrighterPlanetLayout.view_path
-      if ::BrighterPlanetLayout.serve_static_files_using_rack?
-        app.middleware.use '::ActionDispatch::Static', ::BrighterPlanetLayout.public_path
+module BrighterPlanet
+  class Layout
+    class Railtie < ::Rails::Railtie
+      rake_tasks do
+        load 'brighter_planet_layout/rake_tasks.rb'
       end
-      if ::BrighterPlanetLayout.copy_static_files?
-        ::BrighterPlanetLayout.copy_static_files_to_web_server_document_root
+      initializer 'brighter_planet_layout' do |app|
+        app.paths.app.views.push ::BrighterPlanet.layout.view_path
+        if ::BrighterPlanet.layout.serve_static_files_using_rack?
+          app.middleware.use '::ActionDispatch::Static', ::BrighterPlanet.layout.public_path
+        end
+        if ::BrighterPlanet.layout.copy_static_files?
+          ::BrighterPlanet.layout.copy_static_files_to_web_server_document_root
+        end
       end
-    end
-    config.to_prepare do
-      require ::BrighterPlanetLayout.helper_file
-      ::ApplicationController.helper ::BrighterPlanetHelper
-      ::ApplicationController.layout 'brighter_planet'
+      config.to_prepare do
+        require ::BrighterPlanet.layout.helper_file
+        ::ApplicationController.helper ::BrighterPlanetHelper
+        ::ApplicationController.layout 'brighter_planet'
+      end
     end
   end
 end

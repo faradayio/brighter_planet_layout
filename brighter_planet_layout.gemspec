@@ -4,7 +4,7 @@ require "brighter_planet_layout/version"
 
 Gem::Specification.new do |s|
   s.name        = "brighter_planet_layout"
-  s.version     = BrighterPlanetLayout::VERSION
+  s.version     = BrighterPlanet::Layout::VERSION
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Andy Rossmeissl", "Seamus Abshere"]
   s.email       = ["andy@rossmeissl.net"]

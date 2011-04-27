@@ -13,7 +13,7 @@ module BrighterPlanetHelper
   end
   
   def link_to_homesite(text, path = '')
-    if ::BrighterPlanetLayout.application_name == 'Brighter Planet'
+    if ::BrighterPlanet.layout.application_name == 'Brighter Planet'
       path.insert 0, '/'
     else
       path.insert 0, 'http://brighterplanet.com/'
@@ -21,11 +21,8 @@ module BrighterPlanetHelper
     link_to text, path
   end
   
-  def brighter_planet_layout_cdn_url(path)
-    if ::Rails.env.production? and not ::ENV['DISABLE_BRIGHTER_PLANET_LAYOUT_CDN'] == 'true'
-      [ request.protocol, ::BrighterPlanetLayout::CDN, "/#{::BrighterPlanetLayout::VERSION}", path ].join
-    else
-      path
-    end
+  def brighter_planet_layout_cdn_url(path, protocol = 'http')
+    protocol ||= request.protocol
+    ::BrighterPlanet.layout.cdn_url path, protocol
   end
 end
