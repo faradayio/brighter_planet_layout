@@ -19,18 +19,18 @@ module BrighterPlanet
     S3_BUCKET = 'brighterplanetlayout'
   
     def cdn_host(protocol)
-      case protocol
-      when 'https'
+      case protocol.to_s
+      when 'https://'
         'do1ircpq72156.cloudfront.net'
       else
         'layout.brighterplanet.com'
       end
     end
     
-    def cdn_url(path, protocol = 'http')
+    def cdn_url(path, protocol = 'http://')
       path = path.sub(%r{^/}, '')
       if ::Rails.env.production? and not ::ENV['DISABLE_BRIGHTER_PLANET_LAYOUT_CDN'] == 'true'
-        "#{protocol}://#{cdn_host(protocol)}/#{VERSION}/#{path}"
+        "#{protocol}#{cdn_host(protocol)}/#{VERSION}/#{path}"
       else
         "/#{path}"
       end

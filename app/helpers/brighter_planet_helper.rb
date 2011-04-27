@@ -21,8 +21,7 @@ module BrighterPlanetHelper
     link_to text, path
   end
   
-  def brighter_planet_layout_cdn_url(path, protocol = 'http')
-    protocol ||= request.protocol
-    ::BrighterPlanet.layout.cdn_url path, protocol
+  def brighter_planet_layout_cdn_url(path)
+    ::BrighterPlanet.layout.cdn_url path, request.protocol
   end
 end
