@@ -120,6 +120,7 @@ end
 
 if defined? ::Rails::Railtie and ::Rails::VERSION::MAJOR == 3
   require 'brighter_planet_layout/railtie'
+  require 'tronprint/rails'
 elsif defined? ::Rails and ::Rails::VERSION::MAJOR == 2
   require 'brighter_planet_layout/rails'
 end

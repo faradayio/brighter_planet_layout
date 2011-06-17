@@ -624,3 +624,7 @@ ul.pages li a:hover {
   -webkit-border-radius: 3px;
   border-radius: 3px;
 }
+
+#footer #map #links p.cm1-tronprint-link {
+  margin-top: 0;
+}
