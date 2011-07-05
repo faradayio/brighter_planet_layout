@@ -6,6 +6,8 @@
 
     <h1>Application Name</h1>
     <h2>An exciting slogan</h2>
+
+* You need to add either `ultraviolet` (Ruby 1.8) or `spox-ultraviolet` (Ruby 1.9) to your application's Gemfile.
     
 == Sites
 
