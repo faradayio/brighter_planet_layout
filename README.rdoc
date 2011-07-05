@@ -8,6 +8,15 @@
     <h2>An exciting slogan</h2>
 
 * You need to add either `ultraviolet` (Ruby 1.8) or `spox-ultraviolet` (Ruby 1.9) to your application's Gemfile.
+
+== Developing
+
+There's a dummy Rails 3 app within this repo that can be used to test changes to the layout:
+
+    cd test/dummy
+    unicorn
+    
+Changes to `public/stylesheets/brighter_planet.css` will take immediate effect upon browser refresh. Changes to helpers, etc., may require a Unicorn restart.
     
 == Sites
 
