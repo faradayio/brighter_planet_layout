@@ -625,6 +625,8 @@ ul.pages li a:hover {
   border-radius: 3px;
 }
 
-#footer #map #links p.cm1-tronprint-link {
-  margin-top: 0;
+.tronprint-footprint {
+  margin-top: 15px !important;
+  font-size: 12px !important;
+  color: #555 !important;
 }
