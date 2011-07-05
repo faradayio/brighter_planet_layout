@@ -3,5 +3,3 @@ source 'http://rubygems.org'
 gem 'rails', '3.0.5'
 gem 'brighter_planet_layout', :path => '../..'
 gem 'spox-ultraviolet'
-
-gem 'tronprint', :path => '/home/vagrant/tronprint'
