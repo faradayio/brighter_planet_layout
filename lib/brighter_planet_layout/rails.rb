@@ -1,8 +1,8 @@
 if defined? ::Rails and ::Rails::VERSION::MAJOR == 2
   require 'brighter_planet_layout'
   require 'tronprint/rails/tronprint_helper'
-
   require ::BrighterPlanet.layout.helper_file
+
   ::Rails.configuration.to_prepare do
     ::ApplicationController.helper ::BrighterPlanetHelper
     ::ApplicationController.helper ::TronprintHelper
