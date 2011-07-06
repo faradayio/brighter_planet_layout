@@ -86,11 +86,11 @@ module BrighterPlanet
     end
   
     def application_name
-      (::Rails::VERSION::MAJOR == 3) ? ::Rails.application.name : ::APPLICATION_NAME
+      (::Rails::VERSION::MAJOR >= 3) ? ::Rails.application.name : ::APPLICATION_NAME
     end
   
     def google_analytics_ua_number
-      (::Rails::VERSION::MAJOR == 3) ? ::Rails.application.google_analytics_ua_number : ::GOOGLE_ANALYTICS_UA_NUMBER
+      (::Rails::VERSION::MAJOR >= 3) ? ::Rails.application.google_analytics_ua_number : ::GOOGLE_ANALYTICS_UA_NUMBER
     end
   
     def rails_root
@@ -118,7 +118,7 @@ end
 # legacy
 ::BrighterPlanetLayout = ::BrighterPlanet.layout
 
-if defined? ::Rails::Railtie and ::Rails::VERSION::MAJOR == 3
+if defined? ::Rails::Railtie and ::Rails::VERSION::MAJOR >= 3
   require 'brighter_planet_layout/railtie'
   require 'tronprint/rails'
 elsif defined? ::Rails and ::Rails::VERSION::MAJOR == 2
