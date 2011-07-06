@@ -2,6 +2,8 @@ require 'fileutils'
 require 'singleton'
 require 'simple-rss'
 require 'eat'
+require 'tronprint'
+
 require 'brighter_planet_layout/version'
 
 module BrighterPlanet
