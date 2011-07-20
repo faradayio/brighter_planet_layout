@@ -10,9 +10,9 @@
     <div id="links">
       <p><%= link_to_homesite 'About us', 'about' %> &middot; <%= link_to_homesite 'Services', 'services' %> &middot; <%= link_to_homesite 'Terms', 'terms' %></p>
       <p><%= link_to 'Twitter', 'http://twitter.com/brighterplanet' %> &middot <%= link_to 'Blog', 'http://numbers.brighterplanet.com' %> &middot; <%= link_to 'Facebook', 'http://facebook.com/brighterplanet' %></p> 
-      <% cache 'brighter_planet_layout/footer', :expires_in => 10.minutes do %>
-        <%= footprint_badge :attribution => true %>
-      <% end %>
+      <%# cache 'brighter_planet_layout/footer', :expires_in => 10.minutes do %>
+        <%#= footprint_badge :attribution => true %>
+      <%# end %>
     </div>
   </div>
 </div>

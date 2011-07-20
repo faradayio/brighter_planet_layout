@@ -15,9 +15,9 @@ module BrighterPlanet
       end
       config.to_prepare do
         require ::BrighterPlanet.layout.helper_file
-        require 'tronprint/rails/tronprint_helper'
+        # require 'tronprint/rails/tronprint_helper'
         ::ApplicationController.helper ::BrighterPlanetHelper
-        ::ApplicationController.helper ::TronprintHelper
+        # ::ApplicationController.helper ::TronprintHelper
         ::ApplicationController.layout 'brighter_planet'
       end
     end
