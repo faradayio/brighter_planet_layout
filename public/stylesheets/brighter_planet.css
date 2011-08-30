@@ -586,7 +586,7 @@ p.flash.error:before {
 
 #footer #map #slogan {
   margin: 25px 15px 0 13px;
-  width: 142px;
+  width: 135px;
   float: left;
 }
 
@@ -616,6 +616,56 @@ p.flash.error:before {
 
 #footer #map #links p a {
   color: inherit;
+}
+
+#footer #map #social {
+  float: right;
+  list-style: none;
+  margin: 25px 0 0 20px;
+}
+
+#footer #map #social li {
+  width: 40px;
+  float: right;
+  margin: 0 0 0 6px;
+}
+
+#footer #map #social li a {
+  display: block;
+  background: #222;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  background-image:
+    -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      color-stop(0, rgb(100,100,100)),
+      color-stop(0.16, rgb(77,77,77)),
+      color-stop(0.75, rgb(48,48,48)),
+      color-stop(1, rgb(28,28,28))
+    );
+  background-image:
+    -moz-linear-gradient(
+      center top,
+      rgb(100,100,100) 0%,
+      rgb(77,77,77) 16%,
+      rgb(48,48,48) 75%,
+      rgb(28,28,28) 100%
+    );
+  overflow: auto;
+  color: #aaa;
+  text-shadow: 0 -1px 0 #000;
+  font-size: 32px;
+  line-height: 40px;
+  text-align: center;
+  text-decoration: none;
+  font-family: "Social Media Vectors";
+}
+
+#footer #map #social li a:hover {
+  color: #ccc;
 }
 
 ul.pages {

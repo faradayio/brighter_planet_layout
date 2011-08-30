@@ -3,14 +3,19 @@
   <div id="divider">
   </div>
   <div id="map">
+    <ul id="social">
+      <li class="twitter"><%= link_to 't', 'http://twitter.com/brighterplanet', :title => 'Twitter' %></li> 
+      <li class="twitter"><%= link_to 'F', 'http://facebook.com/brighterplanet', :title => 'Facebook' %></li> 
+      <li class="twitter"><%= link_to 'r', 'http://numbers.brighterplanet.com', :title => 'Safety in Numbers, our blog' %></li> 
+      <li class="twitter"><%= link_to 'G', 'http://github.com/brighterplanet', :title => 'GitHub' %></li> 
+    </ul>
     <div id="slogan">
       <h1>Brighter Planet™</h1>
-      <p class="slogan">Business intelligence for a sustainable future</p>
+      <p class="slogan">The computational sustainability platform</p>
       <p class="description">&copy;2011 Brighter Planet</p>
     </div>
     <div id="links">
-      <p><%= link_to_homesite 'About us', 'about' %> &middot; <%= link_to_homesite 'Services', 'services' %> &middot; <%= link_to_homesite 'Terms', 'terms' %></p>
-      <p><%= link_to 'Twitter', 'http://twitter.com/brighterplanet' %> &middot <%= link_to 'Blog', 'http://numbers.brighterplanet.com' %> &middot; <%= link_to 'Facebook', 'http://facebook.com/brighterplanet' %></p> 
+      <p><%= link_to_homesite 'About us', 'about' %> &middot; <%= link_to_homesite 'Press', 'media' %> &middot; <%= link_to_homesite 'Terms', 'terms' %></p>
       <% cache 'brighter_planet_layout/footer', :expires_in => 10.minutes do %>
         <%= footprint_badge :attribution => true %>
       <% end %>
