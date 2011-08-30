@@ -19,17 +19,18 @@
   </ul>
 </div>
 
-<div id="title">
-<%= render :partial => 'layouts/title' %> 
-</div>
+<div id="main">
+  <div id="title">
+  <%= render :partial => 'layouts/title' %> 
+  </div>
 
 <% if flash[:error] or flash[:notice] %>
-<div id="flash">
+  <div id="flash">
 <% if error = flash[:error] %>
-<p class="flash error"><%= error %></p>
+    <p class="flash error"><%= error %></p>
 <% elsif notice = flash[:notice] %>
-<p class="flash notice"><%= notice %></p>
+    <p class="flash notice"><%= notice %></p>
 <% end %>
-</div>
+  </div>
 <% end %>
 

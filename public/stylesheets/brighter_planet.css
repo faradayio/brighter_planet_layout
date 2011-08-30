@@ -10,8 +10,7 @@
 body {
   margin: 0;
   font-size: 13px;
-  background: #ccc url(images/glow.png) repeat-y 50% 0;
-  background: #f1f1f1;
+  background: #111;
 }
 
 body, input, select, button {
@@ -290,6 +289,10 @@ a img {
   background: rgba(0,0,0,0.1);
 }
 
+#main {
+  background: #f1f1f1;
+}
+
 #title {
   background-color: #5FBBFF;
   background-repeat: no-repeat;
@@ -547,10 +550,6 @@ p.flash:before {
 p.flash.error:before {
   content: "⚠";
   color: #F16262;
-}
-
-#footer {
-  background: #111;
 }
 
 #footer #divider {
