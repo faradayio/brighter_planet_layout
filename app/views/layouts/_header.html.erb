@@ -1,13 +1,23 @@
 <div id="header">
   <h1><span>Brighter Planet</span></h1>
+  <p><%= link_to 'Developer site', 'http://brighterplanet.github.com' %> &middot; <%= link_to 'Blog', 'http://numbers.brighterplanet.com/' %></p>
   <ul>
     <li class="home"><%= link_to_homesite 'Home' %></li>
-    <li><%= link_to_homesite 'About', 'about' %></li>
+    <li>
+      <%= link_to_homesite 'About', 'about' %>
+      <div>
+        <ul>
+          <li><%= link_to_homesite 'Partners', 'partners' %></li>
+          <li><%= link_to_homesite 'Projects', 'projects' %></li>
+          <li><%= link_to_homesite 'Our team', 'people' %></li>
+          <li><%= link_to_homesite 'Press', 'media' %></li>
+        </ul>
+      </div>
+    </li>
     <li><%= link_to_homesite 'Services', 'services' %></li>
     <li><%= link_to_homesite 'Research', 'research' %></li>
     <li><%= link_to_homesite 'Apps', 'apps' %></li>
   </ul>
-  <p><%= link_to 'Developer site', 'http://brighterplanet.github.com' %> &middot; <%= link_to 'Blog', 'http://numbers.brighterplanet.com/' %></p>
 </div>
 
 <div id="title">

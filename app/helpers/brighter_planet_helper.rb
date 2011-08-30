@@ -12,13 +12,17 @@ module BrighterPlanetHelper
     ::Uv.parse(code, 'xhtml', lang, false, :idle).html_safe
   end
   
-  def link_to_homesite(text, path = '')
+  def link_to_homesite(text, path = '', &blk)
     if ::BrighterPlanet.layout.application_name == 'Brighter Planet'
       path.insert 0, '/'
     else
       path.insert 0, 'http://brighterplanet.com/'
     end
-    link_to text, path
+    if block_given?
+      link_to path, &blk
+    else
+      link_to text, path
+    end
   end
   
   def brighter_planet_layout_cdn_url(path)

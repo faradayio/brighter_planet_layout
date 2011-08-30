@@ -1,5 +1,5 @@
 /* Fixed-width hints */
-#header, #footer, #flash { max-width: 990px; }
+#header, #flash { max-width: 990px; }
 #title { max-width: 975px; }
 #content { max-width: 960px; }
 #header, #title, #content, #footer, #flash {
@@ -11,6 +11,7 @@ body {
   margin: 0;
   font-size: 13px;
   background: #ccc url(images/glow.png) repeat-y 50% 0;
+  background: #f1f1f1;
 }
 
 body, input, select, button {
@@ -50,7 +51,6 @@ a img {
 }
 
 #header {
-  position: relative;
   background-image:
     -webkit-gradient(
       linear,
@@ -105,6 +105,27 @@ a img {
   padding: 23.5px 0;
 }
 
+#header ul li div {
+  display: none;
+  background: #333;
+  background: rgba(0,0,0,0.9);
+  min-width: 160px;
+  position: absolute;
+  top: 60px;
+  z-index: 100;
+  -moz-border-radius: 0 0 5px 5px;
+  -webkit-border-radius: 0 0 5px 5px;
+  border-radius: 0 0 5px 5px;
+  border-bottom: 1px solid black;
+  padding: 7px 10px;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) { #header ul li div { top: 59px; }}
+
+#header ul li:hover div {
+  display: block;
+}
+
 #header ul li.home a {
   background: url(images/logo.png) no-repeat 13px 50%;
   text-indent: -150px;
@@ -121,6 +142,38 @@ a img {
 
 #header ul li a:hover {
   background-color: rgba(0,0,0,0.1);
+}
+
+#header ul li div ul {
+  margin: 0;
+  width: auto;
+}
+
+#header ul li div ul li {
+  float: none;
+  width: auto;
+  border: none;
+}
+
+#header ul li div ul li:last-child {
+  border: none;
+}
+
+#header ul li div ul li a {
+  border: none;
+  text-align: left;
+  text-transform: none;
+  text-decoration: underline;
+  color: #aaa;
+  line-height: 1.2;
+  text-shadow: 1px 1px 0 black;
+  padding: 3px 0;
+  font-size: 14px;
+}
+
+#header ul li div ul li a:hover {
+  background: none;
+  color: #ddd;
 }
 
 #header p {
@@ -156,15 +209,16 @@ a img {
 }
 
 #header ul li {
-  position: relative;
-  z-index: 10;
+  zoom: 1;
 }
 
 #header p {
   left: 50%;
   right: auto;
-  width: 485px;
+  width: 285px;
   padding: 0 10px 0 0;
+  z-index: 0;
+  margin: 0 0 0 200px;
 }
 
 /* end full-width #header fixed */
@@ -280,6 +334,7 @@ a img {
 #content {
   padding: 15px 15px 50px;
   position: relative;
+  overflow: auto;
 }
 
 #content>p {
@@ -519,6 +574,7 @@ p.flash.error:before {
   overflow: auto;
   font-size: 11px;
   min-height: 15px;
+  clear: both;
 }
 
 #footer #map {
@@ -528,6 +584,8 @@ p.flash.error:before {
   text-shadow: 1px 1px 0 black;
   overflow: auto;
   padding: 0 0 45px 0;
+  width: 990px;
+  margin: 0 auto;
 }
 
 #footer #map #slogan {
