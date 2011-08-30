@@ -51,6 +51,7 @@ a img {
 }
 
 #header {
+  background: #111;
   background-image:
     -webkit-gradient(
       linear,
@@ -107,7 +108,7 @@ a img {
 
 #header ul li div {
   display: none;
-  background: #333;
+  background: #222;
   background: rgba(0,0,0,0.9);
   min-width: 160px;
   position: absolute;
@@ -206,10 +207,6 @@ a img {
 #header ul {
   margin: 0 auto;
   width: 994px;
-}
-
-#header ul li {
-  zoom: 1;
 }
 
 #header p {
