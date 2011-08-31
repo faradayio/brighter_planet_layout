@@ -11,6 +11,7 @@ body {
   margin: 0;
   font-size: 13px;
   background: #111;
+  color: #222;
 }
 
 body, input, select, button {
