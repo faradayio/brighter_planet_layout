@@ -1,5 +1,5 @@
 module BrighterPlanet
   class Layout
-    VERSION = '0.3.16'
+    VERSION = '0.4.0'
   end
 end
