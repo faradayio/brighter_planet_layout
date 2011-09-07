@@ -1,6 +1,6 @@
 <div id="header">
   <h1><span>Brighter Planet</span></h1>
-  <p><%= link_to 'Developer site', 'http://brighterplanet.github.com' %> &middot; <%= link_to 'Blog', 'http://numbers.brighterplanet.com/' %></p>
+  <p><%= link_to 'Our blog', 'http://numbers.brighterplanet.com/' %></p>
   <ul>
     <li class="home"><%= link_to_homesite 'Home' %></li>
     <li>
@@ -14,8 +14,29 @@
       </div>
     </li>
     <li><%= link_to_homesite 'Services', 'services' %></li>
-    <li><%= link_to_homesite 'Research', 'research' %></li>
-    <li><%= link_to_homesite 'Apps', 'apps' %></li>
+    <li>
+      <%= link_to_homesite 'Research', 'research' %>
+      <div>
+        <ul>
+          <li><%= link_to_homesite 'Science publications', 'research' %></li>
+          <li><%= link_to_homesite 'Technology writing', 'research#posts' %></li>
+          <li><%= link_to_homesite 'Open source software', 'research#repos' %></li>
+        </ul>
+      </div>
+    </li>
+    <li>
+      <%= link_to_homesite 'Apps', 'apps' %>
+      <div>
+        <ul>
+          <li><%= link_to_homesite 'MasterCard CER', 'apps/mastercard' %></li>
+          <li><%= link_to_homesite 'Bank of America cards', 'apps/cards' %></li>
+          <li><%= link_to_homesite 'Hootroot', 'apps/hootroot' %></li>
+          <li><%= link_to_homesite 'TripCarbon', 'apps/tripcarbon' %></li>
+          <li><%= link_to_homesite 'Tronprint', 'apps/tronprint' %></li>
+          <li><%= link_to_homesite 'More &hellip;'.html_safe, 'apps' %></li>
+        </ul>
+      </div>
+    </li>
   </ul>
 </div>
 
