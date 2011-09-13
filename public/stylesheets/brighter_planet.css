@@ -110,7 +110,7 @@ a img {
   display: none;
   background: #222;
   background: rgba(0,0,0,0.9);
-  min-width: 160px;
+  width: 500px;
   position: absolute;
   top: 60px;
   z-index: 100;
@@ -145,19 +145,39 @@ a img {
   background-color: rgba(0,0,0,0.1);
 }
 
+#header ul li div p {
+  float: left;
+  width: 180px;
+  color: #ccc;
+  font-size: 16px;
+  padding: 0 14px 0 0;
+  border-right: 1px solid black;
+  -moz-box-shadow: 1px 0 0 #444;
+  -webkit-box-shadow: 1px 0 0 #444;
+  box-shadow: 1px 0 0 #444;
+}
+
 #header ul li div ul {
   margin: 0;
-  width: auto;
+  width: 280px;
+  border-left: 1px solid #444;
+  -moz-box-shadow: -1px 0 0 black;
+  -webkit-box-shadow: -1px 0 0 black;
+  box-shadow: -1px 0 0 black;
+  padding: 0 0 0 15px;
 }
 
 #header ul li div ul li {
   float: none;
   width: auto;
   border: none;
+  color: #666;
+  margin: 0 0 5px;
 }
 
 #header ul li div ul li:last-child {
   border: none;
+  margin-bottom: none;
 }
 
 #header ul li div ul li a {
@@ -177,7 +197,7 @@ a img {
   color: #ddd;
 }
 
-#header p {
+#header p.secondary {
   position: absolute;
   right: 15px;
   top: 0;
@@ -187,13 +207,13 @@ a img {
   text-align: right;
 }
 
-#header p a {
+#header p.secondary a {
   color: inherit;
   font-size: 12px;
   text-shadow: -1px -1px 0 black;
 }
 
-#header p a:hover {
+#header p.secondary a:hover {
   color: silver;
 }
 
@@ -209,7 +229,7 @@ a img {
   width: 994px;
 }
 
-#header p {
+#header p.secondary {
   left: 50%;
   right: auto;
   width: 285px;
