@@ -146,6 +146,14 @@ a img {
   text-align: left;
 }
 
+#header li:last-child {
+  border-right: 1px solid #555;
+}
+
+#header li:last-child a {
+  border-right: 1px solid black;
+}
+
 #header ul li a:hover {
   background-color: rgba(0,0,0,0.1);
 }
@@ -175,18 +183,17 @@ a img {
 #header ul li div ul li {
   float: none;
   width: auto;
-  border: none;
+  border: none !important;
   color: #666;
   margin: 0 0 5px;
 }
 
 #header ul li div ul li:last-child {
-  border: none;
   margin-bottom: none;
 }
 
 #header ul li div ul li a {
-  border: none;
+  border: none !important;
   text-align: left;
   text-transform: none;
   text-decoration: underline;
