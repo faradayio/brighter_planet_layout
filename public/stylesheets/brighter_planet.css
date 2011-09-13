@@ -109,18 +109,18 @@ a img {
 #header ul li div {
   display: none;
   background: white;
-  background: rgba(255,255,255,0.95);
+  background: rgba(255,255,255,0.8);
   background-image: -webkit-gradient(
       linear,
       left top,
       left bottom,
-      color-stop(0, rgba(220,220,220,0.95)),
-      color-stop(0.1, rgba(255,255,255,0.95))
+      color-stop(0, rgba(220,220,220,0.8)),
+      color-stop(0.1, rgba(255,255,255,0.8))
   );
   background-image: -moz-linear-gradient(
       center top,
-      rgba(220,220,220,0.95) 0%,
-      rgba(255,255,255,0.95) 10%
+      rgba(220,220,220,0.8) 0%,
+      rgba(255,255,255,0.8) 10%
   );
   width: 500px;
   position: absolute;
