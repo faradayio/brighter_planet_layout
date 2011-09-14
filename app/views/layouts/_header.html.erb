@@ -38,12 +38,12 @@
         </ul>
       </div>
     </li>
-    <li>
+    <li class="models">
       <%= link_to 'Models', 'http://carbon.brighterplanet.com/models' %>
       <div>
         <p>Brighter Planet's technology platform calculates the carbon, energy, and resource impact of a variety of real-life emission sources. Our impact models resiliently adapt to user input, have been third-party certified, and feature expressive, human-oriented APIs.</p>
         <ul>
-<% BrighterPlanet.metadata.emitters.map(&:underscore).each do |model| %>
+<% BrighterPlanet.metadata.emitters.sort.map(&:underscore).each do |model| %>
           <li><%= link_to model.humanize, "http://carbon.brighterplanet.com/models/#{model}" %></li>
 <% end %>
         </ul>

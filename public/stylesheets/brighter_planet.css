@@ -134,6 +134,10 @@ a img {
   padding: 7px 10px;
 }
 
+#header ul li.models div {
+  width: 360px;
+}
+
 @media screen and (-webkit-min-device-pixel-ratio:0) { #header ul li div { top: 59px; }}
 
 #header ul li:hover div {
@@ -178,6 +182,10 @@ a img {
   -webkit-box-shadow: -1px 0 0 #ddd;
   box-shadow: -1px 0 0 #ddd;
   padding: 0 0 0 15px;
+}
+
+#header ul li.models div ul {
+  width: 100px;
 }
 
 #header ul li div ul li {
