@@ -36,6 +36,8 @@ pre {
   margin: 10px -15px;
   border-top: 1px solid #ddd;
   -moz-box-shadow: inset 0 5px 5px #eee;
+  -webkit-box-shadow: inset 0 5px 5px #eee;
+  box-shadow: inset 0 5px 5px #eee;
 }
 
 a {
