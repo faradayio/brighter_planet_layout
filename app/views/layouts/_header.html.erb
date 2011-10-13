@@ -1,55 +1,7 @@
 <div id="header">
   <h1><span>Brighter Planet</span></h1>
   <p class="secondary"><%= link_to 'Our blog', 'http://numbers.brighterplanet.com/' %> &middot; <%= link_to_homesite 'Contact us', 'contact' %></p>
-  <ul>
-    <li class="home"><%= link_to_homesite 'Home' %></li>
-    <li>
-      <%= link_to_homesite 'About', 'about' %>
-      <div>
-        <p>Brighter Planet powers the leading computational sustainability platform, using hard numbers and raw data to reveal actionable opportunities and deliver measurable results to businesses and individuals worldwide</p>
-        <ul>
-          <li><%= link_to_homesite 'Overview', 'about' %> Our story and vision for the future of sustainability</li>
-          <li><%= link_to_homesite 'Our team', 'people' %> Our staff, board of directors, and advisors</li>
-          <li><%= link_to_homesite 'Partners', 'partners' %> A list of our collaborators</li>
-          <li><%= link_to_homesite 'Press', 'press' %> Brighter Planet in the news &amp; resources for the press</li>
-        </ul>
-      </div>
-    </li>
-    <li>
-      <%= link_to_homesite 'Services', 'services' %>
-      <div>
-        <p>Brighter Planet helps clients identify opportunities for data-driven sustainability initiatives, designs programs around these opportunities to deliver business value, and assists with integration and development</p>
-        <ul>
-          <li><%= link_to_homesite 'Overview', 'services' %> How we work with our clients</li>
-          <li><%= link_to_homesite 'Client case studies', 'case_studies' %> How we have helped clients worldwide revolutionize the way they address sustainability</li>
-          <li><%= link_to_homesite 'Imaginations', 'imaginations' %> Explorations of concepts in computational sustainability for leading businesses</li>
-          <li><%= link_to_homesite 'Research', 'research' %> Our analyses, survey data and best practices advice for corporate sustainability</li>
-        </ul>
-    </li>
-    <li>
-      <%= link_to_homesite 'Technology', 'technology' %>
-      <div>
-        <p>The backbone of Brighter Planet is our <strong>CM1</strong>™ computational sustainability platform, which delivers on-demand carbon, energy, and resource impact calculations through a developer-friendly API</p>
-        <ul>
-          <li><%= link_to 'CM1 homepage', 'http://carbon.brighterplanet.com' %> Technical details and API documentation</li>
-          <li><%= link_to_homesite 'Prototypes', 'prototypes' %> Experiments from our staff that demonstrate CM1's capabilities</li>
-          <li><%= link_to_homesite 'App gallery', 'app_gallery' %> A showcase of Brighter Planet-powered apps created by developers from across the community</li>
-          <li><%= link_to 'Reference data', 'http://data.brighterplanet.com' %> Our always-current clearinghouse of global climate, geographic, and demographic data</li>
-        </ul>
-      </div>
-    </li>
-    <li class="models">
-      <%= link_to 'Models', 'http://carbon.brighterplanet.com/models' %>
-      <div>
-        <p>Brighter Planet's technology platform calculates the carbon, energy, and resource impact of a variety of real-life emission sources. Our impact models resiliently adapt to user input, have been third-party certified, and feature expressive, human-oriented APIs.</p>
-        <ul>
-<% BrighterPlanet.metadata.emitters.sort.map(&:underscore).each do |model| %>
-          <li><%= link_to model.humanize, "http://carbon.brighterplanet.com/models/#{model}" %></li>
-<% end %>
-        </ul>
-      </div>
-    </li>
-  </ul>
+  <%= render :partial => 'layouts/nav' %>
 </div>
 
 <div id="main">

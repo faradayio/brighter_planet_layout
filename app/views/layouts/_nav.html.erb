@@ -1,0 +1,50 @@
+  <ul>
+    <li class="home"><%= link_to_homesite 'Home' %></li>
+    <li>
+      <%= link_to_homesite 'About', 'about' %>
+      <div>
+        <p>Brighter Planet powers the leading computational sustainability platform, using hard numbers and raw data to reveal actionable opportunities and deliver measurable results to businesses and individuals worldwide</p>
+        <ul>
+          <li><%= link_to_homesite 'Overview', 'about' %> <span>Our story and vision for the future of sustainability</span></li>
+          <li><%= link_to_homesite 'Our team', 'people' %> <span>Our staff, board of directors, and advisors</span></li>
+          <li><%= link_to_homesite 'Partners', 'partners' %> <span>A list of our collaborators</span></li>
+          <li><%= link_to_homesite 'Press', 'press' %> <span>Brighter Planet in the news &amp; resources for the press</span></li>
+        </ul>
+      </div>
+    </li>
+    <li>
+      <%= link_to_homesite 'Services', 'services' %>
+      <div>
+        <p>Brighter Planet helps clients identify opportunities for data-driven sustainability initiatives, designs programs around these opportunities to deliver business value, and assists with integration and development</p>
+        <ul>
+          <li><%= link_to_homesite 'Overview', 'services' %> <span>How we work with our clients</span></li>
+          <li><%= link_to_homesite 'Client case studies', 'case_studies' %> <span>How we have helped clients worldwide revolutionize the way they address sustainability</span></li>
+          <li><%= link_to_homesite 'Imaginations', 'imaginations' %> <span>Explorations of concepts in computational sustainability for leading businesses</span></li>
+          <li><%= link_to_homesite 'Research', 'research' %> <span>Our analyses, survey data and best practices advice for corporate sustainability</span></li>
+        </ul>
+    </li>
+    <li>
+      <%= link_to_homesite 'Technology', 'technology' %>
+      <div>
+        <p>The backbone of Brighter Planet is our <strong>CM1</strong>™ computational sustainability platform, which delivers on-demand carbon and energy impact calculations through a developer-friendly API</p>
+        <ul>
+          <li><%= link_to 'CM1 homepage', 'http://carbon.brighterplanet.com' %> <span>Technical details and API documentation</span></li>
+          <li><%= link_to_homesite 'Prototypes', 'prototypes' %> <span>Experiments from our staff that demonstrate CM1's capabilities</span></li>
+          <li><%= link_to_homesite 'App gallery', 'app_gallery' %> <span>A showcase of Brighter Planet-powered apps created by developers from across the community</span></li>
+          <li><%= link_to 'Reference data', 'http://data.brighterplanet.com' %> <span>Our always-current clearinghouse of global climate, geographic, and demographic data</span></li>
+        </ul>
+      </div>
+    </li>
+    <li class="models">
+      <%= link_to 'Models', 'http://carbon.brighterplanet.com/models' %>
+      <div>
+        <p>Brighter Planet's technology platform calculates the carbon, energy, and resource impact of a variety of real-life emission sources. Our impact models resiliently adapt to user input, have been third-party certified, and feature expressive, human-oriented APIs.</p>
+        <ul>
+<% BrighterPlanet.metadata.emitters.sort.map(&:underscore).each do |model| %>
+          <li><%= link_to model.humanize, "http://carbon.brighterplanet.com/models/#{model}" %></li>
+<% end %>
+        </ul>
+      </div>
+    </li>
+  </ul>
+

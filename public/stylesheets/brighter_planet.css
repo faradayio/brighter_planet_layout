@@ -653,12 +653,42 @@ p.flash.error:before {
   margin: 25px 0 0;
 }
 
-#footer #map #links p {
-  font-size: 14px;
+#footer #links ul {
+  list-style: none;
 }
 
-#footer #map #links p a {
-  color: inherit;
+#footer #links>ul {
+  overflow: auto;
+  width: 364px;
+}
+
+#footer #links>ul>li {
+  width: 121px;
+  float: left;
+}
+
+#footer #links ul li.home,
+#footer #links ul li.models,
+#footer #links ul li ul li span,
+#footer #links ul li ul li:first-child,
+#footer #links ul li p {
+  display: none;
+}
+
+#footer #links a {
+  color: gray;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+#footer #links a:hover {
+  text-decoration: underline;
+  color: silver;
+}
+
+#footer #links ul li ul li a {
+  color: #555;
+  font-size: 13px;
 }
 
 #footer #map #social {
