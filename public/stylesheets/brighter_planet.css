@@ -491,74 +491,8 @@ p.cta a {
   font-size: 18px;
 }
 
-p.new, div.destroy {
-  margin: 15px 15px 0 150px;
-}
-
-p.new a {
-  color: blue;
-  text-decoration: none;
-  text-transform: uppercase;
-  text-shadow: 1px 1px 0 white;
-}
-
-p.new a:before {
-  content: "✚";
-  font-size: 30px;
-  margin: 0 5px 0 0;
-  vertical-align: -3px;
-}
-
-p.new a:hover:before {
-  color: #333;
-}
-
-div.destroy input[type=submit] {
-  background-image:
-    -webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        color-stop(0, rgb(255,66,66)),
-        color-stop(0.15, rgb(245,19,19)),
-        color-stop(0.75, rgb(204,10,10)),
-        color-stop(1, rgb(143,6,6))
-    );
-  background-image:
-    -moz-linear-gradient(
-        center top,
-        rgb(255,66,66) 0%,
-        rgb(245,19,19) 15%,
-        rgb(204,10,10) 75%,
-        rgb(143,6,6) 100%
-    );
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  border: none;
-  border-radius: 3px;
-  padding: 5px;
-  color: #ddd;
-  text-decoration: none;
-  text-shadow: -1px -1px 0 black;
-  text-align: center;
-}
-
-#content>p.back {
-  margin: 10px 15px 10px 150px;
-  border-top: 1px solid silver;
-  padding: 10px 0 0;
-}
-
-p.back:before {
-  content: "← "
-}
-
-p.back a {
-  color: blue;
-}
-
 p.flash {
-  margin: 0 15px 0 165px;
+  margin: 0 15px;
   padding: 10px;
   position: relative;
   color: white;
