@@ -24,11 +24,11 @@
         </ul>
     </li>
     <li>
-      <%= link_to 'Technology', 'http://carbon.brighterplanet.com' %>
+      <%= link_to 'Technology', 'http://impact.brighterplanet.com' %>
       <div>
         <p>The backbone of Brighter Planet is our <strong>CM1</strong>™ computational sustainability platform, which delivers on-demand carbon and energy impact calculations through a developer-friendly API</p>
         <ul>
-          <li><%= link_to 'CM1 homepage', 'http://carbon.brighterplanet.com' %> <span>Technical details and API documentation</span></li>
+          <li><%= link_to 'CM1 homepage', 'http://impact.brighterplanet.com' %> <span>Technical details and API documentation</span></li>
           <li><%= link_to_homesite 'Prototypes', 'prototypes' %> <span>Experiments from our staff that demonstrate CM1's capabilities</span></li>
           <li><%= link_to_homesite 'App gallery', 'app_gallery' %> <span>A showcase of Brighter Planet-powered apps created by developers from across the community</span></li>
           <li><%= link_to 'Reference data', 'http://data.brighterplanet.com' %> <span>Our always-current clearinghouse of global climate, geographic, and demographic data</span></li>
@@ -36,12 +36,12 @@
       </div>
     </li>
     <li class="models">
-      <%= link_to 'Models', 'http://carbon.brighterplanet.com/models' %>
+      <%= link_to 'Models', 'http://impact.brighterplanet.com/models' %>
       <div>
         <p>Brighter Planet's technology platform calculates the carbon, energy, and resource impact of a variety of real-life emission sources. Our impact models resiliently adapt to user input, have been third-party certified, and feature expressive, human-oriented APIs.</p>
         <ul>
 <% BrighterPlanet.metadata.emitters.sort.map(&:underscore).each do |model| %>
-          <li><%= link_to model.humanize, "http://carbon.brighterplanet.com/models/#{model}" %></li>
+          <li><%= link_to model.humanize, "http://impact.brighterplanet.com/models/#{model}" %></li>
 <% end %>
         </ul>
       </div>
