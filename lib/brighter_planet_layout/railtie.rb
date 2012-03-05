@@ -5,10 +5,10 @@ module BrighterPlanet
         load 'brighter_planet_layout/rake_tasks.rb'
       end
       initializer 'brighter_planet_layout' do |app|
-        if Rails::VERSION::MINOR > 1
-          app.paths['app/views'].push ::BrighterPlanet.layout.view_path
-        else
+        if Rails::VERSION::MAJOR == 3 and Rails::VERSION::MINOR == 0
           app.paths.app.views.push ::BrighterPlanet.layout.view_path
+        else
+          ::ActionController::Base.append_view_path ::BrighterPlanet.layout.view_path
         end
         if ::BrighterPlanet.layout.serve_static_files_using_rack?
           app.middleware.use '::ActionDispatch::Static', ::BrighterPlanet.layout.public_path
