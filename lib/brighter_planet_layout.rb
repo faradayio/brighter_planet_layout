@@ -2,7 +2,7 @@ require 'fileutils'
 require 'singleton'
 require 'simple-rss'
 require 'eat'
-require 'tronprint'
+#require 'tronprint'
 require 'brighter_planet_metadata'
 
 require 'brighter_planet_layout/version'
@@ -82,6 +82,10 @@ module BrighterPlanet
   
     def heroku?
       ::File.readable? '/home/heroku_rack/heroku.ru'
+    end
+
+    def include_application_stylesheet?
+      File.exist?(File.join(rails_root, 'public', 'stylesheets', 'application.css')) || (Rails::VERSION::MAJOR == 3 && Rails::VERSION::MINOR >= 1)
     end
   
     def serve_static_files_using_rack?

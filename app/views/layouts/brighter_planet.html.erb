@@ -13,7 +13,7 @@
   <%= stylesheet_link_tag "/stylesheets/brighter_planet.css" %>
   <%= stylesheet_link_tag "/stylesheets/idle.css" %>
   <![endif]-->
-  <% if File.exist? File.join(::BrighterPlanet.layout.rails_root, 'public', 'stylesheets', 'application.css') %>
+  <% if BrighterPlanet.layout.include_application_stylesheet? %>
     <%= stylesheet_link_tag "application" %>
   <% end %>
   <!-- END brighter_planet_layout stylesheets -->
