@@ -9,19 +9,6 @@ Rake::TestTask.new(:test) do |test|
   test.verbose = true
 end
 
-begin
-  require 'rake/rdoctask'
-  Rake::RDocTask.new do |rdoc|
-    rdoc.rdoc_dir = 'rdoc'
-    rdoc.title = 'brighter_planet_layout'
-    rdoc.options << '--line-numbers' << '--inline-source'
-    rdoc.rdoc_files.include('README*')
-    rdoc.rdoc_files.include('lib/**/*.rb')
-  end
-rescue LoadError
-   puts "Rdoc is not available"
-end
-
 # sabshere 11/17/10 not worth it --cache-control=\"public, max-age=7776000\"
 task :update_s3 do
   missing = %w{ AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY SSL_CERT_DIR S3SYNC_DIR }.select { |i| ENV[i].to_s.empty? }
