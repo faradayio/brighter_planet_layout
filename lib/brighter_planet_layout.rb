@@ -85,7 +85,15 @@ module BrighterPlanet
     end
 
     def include_application_stylesheet?
-      File.exist?(File.join(rails_root, 'public', 'stylesheets', 'application.css')) || (Rails::VERSION::MAJOR == 3 && Rails::VERSION::MINOR >= 1)
+      supports_asset_pipeline? || File.exist?(File.join(rails_root, 'public', 'stylesheets', 'application.css'))
+    end
+
+    def include_application_javascript?
+      supports_asset_pipeline? || File.exist?(File.join(rails_root, 'public', 'javascripts', 'application.js'))
+    end
+
+    def supports_asset_pipeline?
+      Rails::VERSION::MAJOR == 3 && Rails::VERSION::MINOR >= 1
     end
   
     def serve_static_files_using_rack?
