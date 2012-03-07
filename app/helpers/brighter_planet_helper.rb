@@ -8,8 +8,8 @@ module BrighterPlanetHelper
     end
   end
 
-  def syntax(code, lang = 'ruby')
-    ::Uv.parse(code, 'xhtml', lang, false, :idle).html_safe
+  def syntax(code, lang = 'ruby', style = :idle)
+    ::Uv.parse(code, 'xhtml', lang, false, style).html_safe
   end
   
   def link_to_homesite(text, path = '', &blk)
