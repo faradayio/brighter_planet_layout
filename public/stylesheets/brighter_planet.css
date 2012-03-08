@@ -445,7 +445,8 @@ p.cta a {
   position: relative;
 }
 
-#content form dl dd input[type=text], #content form dl dd input[type=password] {
+#content form dl dd input[type=text], #content form dl dd input[type=password], 
+#content form dl dd input[type=email] {
   font-size: 21px;
   padding: 4px;
   width: 100%;
