@@ -19,7 +19,7 @@ module Rails
   end
 end
 
-class TestBrighterPlanet.layout < Test::Unit::TestCase
+class TestBrighterPlanetLayout < Test::Unit::TestCase
   def test_application_name
     assert_equal 'Foobar', BrighterPlanet.layout.application_name
   end

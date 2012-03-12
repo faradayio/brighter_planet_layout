@@ -1,7 +1,8 @@
+require 'net/http'
+require 'uri'
 require 'fileutils'
 require 'singleton'
 require 'simple-rss'
-require 'eat'
 #require 'tronprint'
 require 'brighter_planet_metadata'
 
@@ -113,19 +114,15 @@ module BrighterPlanet
     end
   
     def latest_tweet
-      ::SimpleRSS.parse(eat(TWITTER_RSS)).entries.first
-    rescue ::SocketError, ::Timeout::Error, ::Errno::ETIMEDOUT, ::Errno::ENETUNREACH, ::Errno::ECONNRESET, ::Errno::ECONNREFUSED
-      # nil
-    rescue ::NoMethodError
-      # nil
+      ::SimpleRSS.parse(::Net::HTTP.get(::URI.parse(TWITTER_RSS))).entries.first
+    rescue ::Exception
+      $stderr.puts "[brighter_planet_layout] Can't get latest tweet because of #{$!.inspect}"
     end
   
     def latest_blog_post
-      ::SimpleRSS.parse(eat(BLOG_ATOM)).entries.first
-    rescue ::SocketError, ::Timeout::Error, ::Errno::ETIMEDOUT, ::Errno::ENETUNREACH, ::Errno::ECONNRESET, ::Errno::ECONNREFUSED
-      # nil
-    rescue ::NoMethodError
-      # nil
+      ::SimpleRSS.parse(::Net::HTTP.get(::URI.parse(BLOG_ATOM))).entries.first
+    rescue ::Exception
+      $stderr.puts "[brighter_planet_layout] Can't get latest blog post because of #{$!.inspect}"
     end
   end
 end
