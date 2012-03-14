@@ -85,6 +85,11 @@ module BrighterPlanet
       ::File.readable? '/home/heroku_rack/heroku.ru'
     end
 
+    # 3.2+
+    def asset_pipeline_probably_working?
+      ::Rails::VERSION::MAJOR >= 3 and ::Rails::VERSION::MINOR > 1
+    end
+
     def include_application_stylesheet?
       supports_asset_pipeline? || File.exist?(File.join(rails_root, 'public', 'stylesheets', 'application.css'))
     end
@@ -94,7 +99,7 @@ module BrighterPlanet
     end
 
     def supports_asset_pipeline?
-      Rails::VERSION::MAJOR == 3 && Rails::VERSION::MINOR >= 1
+      Rails::VERSION::MAJOR >= 3 && Rails::VERSION::MINOR >= 1
     end
   
     def serve_static_files_using_rack?

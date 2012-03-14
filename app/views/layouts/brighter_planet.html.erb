@@ -18,12 +18,14 @@
   <% end %>
   <!-- END brighter_planet_layout stylesheets -->
   <!-- START brighter_planet_layout javascripts -->
-  <%= javascript_include_tag brighter_planet_layout_cdn_url("/javascripts/prototype.rails-#{Rails::VERSION::STRING}.js") %>
-  <%= javascript_include_tag brighter_planet_layout_cdn_url("/javascripts/effects.js") %>
-  <%= javascript_include_tag brighter_planet_layout_cdn_url("/javascripts/dragdrop.js") %>
-  <%= javascript_include_tag brighter_planet_layout_cdn_url("/javascripts/controls.js") %>
-  <% if ::Rails::VERSION::MAJOR >= 3 %>
-    <%= javascript_include_tag brighter_planet_layout_cdn_url("/javascripts/rails.rails-#{Rails::VERSION::STRING}.js") %>
+  <% unless BrighterPlanet.layout.asset_pipeline_probably_working? %>
+    <%= javascript_include_tag brighter_planet_layout_cdn_url("/javascripts/prototype.rails-#{Rails::VERSION::STRING}.js") %>
+    <%= javascript_include_tag brighter_planet_layout_cdn_url("/javascripts/effects.js") %>
+    <%= javascript_include_tag brighter_planet_layout_cdn_url("/javascripts/dragdrop.js") %>
+    <%= javascript_include_tag brighter_planet_layout_cdn_url("/javascripts/controls.js") %>
+    <% if ::Rails::VERSION::MAJOR >= 3 %>
+      <%= javascript_include_tag brighter_planet_layout_cdn_url("/javascripts/rails.rails-#{Rails::VERSION::STRING}.js") %>
+    <% end %>
   <% end %>
   <% if BrighterPlanet.layout.include_application_javascript? %>
     <%= javascript_include_tag "application" %>
