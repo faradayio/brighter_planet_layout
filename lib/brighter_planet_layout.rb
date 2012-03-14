@@ -1,8 +1,5 @@
-require 'net/http'
-require 'uri'
 require 'fileutils'
 require 'singleton'
-require 'simple-rss'
 #require 'tronprint'
 require 'brighter_planet_metadata'
 
@@ -17,9 +14,6 @@ module BrighterPlanet
     include ::Singleton
     
     GEM_ROOT = ::File.expand_path ::File.join(::File.dirname(__FILE__), '..')
-    TWITTER_RSS = 'http://twitter.com/statuses/user_timeline/15042574.rss'
-    BLOG_ATOM = 'http://numbers.brighterplanet.com/latest.xml'
-    TIMEOUT = 5 # seconds
     S3_BUCKET = 'brighterplanetlayout'
   
     def cdn_host(protocol)
@@ -116,18 +110,6 @@ module BrighterPlanet
   
     def rails_root
       ::Rails.respond_to?(:root) ? ::Rails.root : ::RAILS_ROOT
-    end
-  
-    def latest_tweet
-      ::SimpleRSS.parse(::Net::HTTP.get(::URI.parse(TWITTER_RSS))).entries.first
-    rescue ::Exception
-      $stderr.puts "[brighter_planet_layout] Can't get latest tweet because of #{$!.inspect}"
-    end
-  
-    def latest_blog_post
-      ::SimpleRSS.parse(::Net::HTTP.get(::URI.parse(BLOG_ATOM))).entries.first
-    rescue ::Exception
-      $stderr.puts "[brighter_planet_layout] Can't get latest blog post because of #{$!.inspect}"
     end
   end
 end
